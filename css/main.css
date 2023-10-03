@@ -292,6 +292,7 @@ footer{
 /* Styles de base pour le menu */
 nav {
   background-color: #333;
+  /*position: fixed;*/
 }
 
 ul {

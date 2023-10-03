@@ -32,3 +32,5 @@ function AfficherSlide(index) {
 function AutoSlide(){
   AfficherSlide(slideIndex +=1);
 }
+
+

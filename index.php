@@ -20,6 +20,9 @@
   <link rel="stylesheet" href="css/main.css">
 
   <meta name="theme-color" content="#fafafa">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -56,7 +59,11 @@
   <span class="dot" onclick="currentSlide(4)"></span>
 </div>
 
+<div id="map" style="width: 600px; height: 400px;"></div>
+
 <script src="js/script.js"></script>
+<script src="js/map.js"></script>
+
   <!-- Add your site or application content here -->
   <p>Yo c'est le gite fsdf </p>
 
