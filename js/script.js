@@ -1,68 +1,34 @@
-/*const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
-const carouselSlide = document.querySelector('.carousel-slide');
-const images = document.querySelectorAll('.carousel-slide img');
-
-let counter = 0;
-const slideWidth = images[0].clientWidth;
-
-nextButton.addEventListener('click', () => {
-  if (counter >= images.length - 1) {
-    counter = 0;
-  } else {
-    counter++;
-  }
-  updateCarousel();
-});
-
-prevButton.addEventListener('click', () => {
-  if (counter <= 0) {
-    counter = images.length - 1;
-  } else {
-    counter--;
-  }
-  updateCarousel();
-});
-
-function updateCarousel() {
-  carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
-}
-
-// Automatiquement changer les images toutes les 3 secondes
-function autoSlide() {
-  if (counter >= images.length - 1) {
-    counter = 0;
-  } else {
-    counter++;
-  }
-  updateCarousel();
-}
-
-setInterval(autoSlide, 3000);*/
-
-let slideIndex = 1;
-showSlides(slideIndex);
+let slideIndex = 0;
+/*AfficherSlide(slideIndex);*/
+AutoSlide();
+let timer = setInterval(AutoSlide, 3000);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  AfficherSlide(slideIndex += n);
+  clearInterval(timer)
+  timer = setInterval(AutoSlide, 3000);
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  AfficherSlide(slideIndex = n);
 }
 
-function showSlides(n) {
+function AfficherSlide(index) {
   let i;
-  let slides = document.getElementsByClassName("custom-slider");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  let images = document.getElementsByClassName("custom-image");
+  let points = document.getElementsByClassName("dot");
+  if (index > images.length) {slideIndex = 1}
+  if (index < 1) {slideIndex = images.length}
+  for (i = 0; i < images.length; i++) {
+    images[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  for (i = 0; i < points.length; i++) {
+    points[i].className = points[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  images[slideIndex-1].style.display = "block";
+  points[slideIndex-1].className += " active";
+}
+
+function AutoSlide(){
+  AfficherSlide(slideIndex +=1);
 }
