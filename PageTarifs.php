@@ -15,7 +15,6 @@
   </header>
 <div>
   <h2> Les différents type de tarifs </h2>
-
   <table border="1" class="center">
     <tr>
       <th></th>
@@ -35,16 +34,16 @@
     <tr>
       <td>Bonus 1</td>
       <td colspan="2" class="center">       1000 €</td>
-
     </tr> <tr>
     <td>Bonus 2</td>
     <td colspan="2" class="center">560 €</td>
-
   </tr>
-
-
   </table>
 </div>
-
+  <footer>
+    <?php
+    include_once ("./HTML/footer.html");
+    ?>
+  </footer>
 </body>
 </html>
