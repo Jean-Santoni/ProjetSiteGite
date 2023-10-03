@@ -8,6 +8,11 @@
 </head>
 <body class="tarif">
   <header>
+
+      <?php
+      include_once ("./HTML/header.html");
+      ?>
+
     <h1 class=" titrePage" >Pages des tarifs</h1>
   </header>
 <div>

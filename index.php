@@ -24,14 +24,9 @@
 
 <body>
 <header>
-  <nav>
-    <ul>
-      <li><a href="./index.html">Accueil</a></li>
-      <li><a href="#">Calendrier</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="./PageTarifs.html">Tarifs</a></li>
-    </ul>
-  </nav>
+  <?php
+  include_once ("./HTML/header.html");
+  ?>
 </header>
 <div class="slide-container">
   <div class="custom-slider fade">
