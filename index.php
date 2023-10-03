@@ -28,26 +28,22 @@
   include_once ("./HTML/header.html");
   ?>
 </header>
-<div class="slide-container">
-  <div class="custom-slider fade">
+<div class="carrousel">
+  <div class="custom-image fade">
     <div class="slide-index">1 / 4</div>
     <img class="slide-img" src="img/Table1.png">
-    <!--<div class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>-->
   </div>
-  <div class="custom-slider fade">
+  <div class="custom-image fade">
     <div class="slide-index">2 / 4</div>
     <img class="slide-img" src="img/Table2.png">
-    <!--<div class="slide-text">Nullam luctus aliquam ornare. </div>-->
   </div>
-  <div class="custom-slider fade">
+  <div class="custom-image fade">
     <div class="slide-index">3 / 4</div>
     <img class="slide-img" src="img/Table3.png">
-    <!--<div class="slide-text">Praesent lobortis libero sed egestas suscipit.</div>-->
   </div>
-  <div class="custom-slider fade">
+  <div class="custom-image fade">
     <div class="slide-index">4 / 4</div>
     <img class="slide-img" src="img/Fond_menu.png">
-    <!--<div class="slide-text">Praesent lobortis libero sed egestas suscipit.</div>-->
   </div>
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>

@@ -319,9 +319,9 @@ a:hover {
 }
 
 
-/* Carousel */
-.custom-slider { display: none; }
-.slide-container {
+/* Carroussel */
+.custom-image { display: none; }
+.carrousel {
   max-width: 800px;
   position: relative;
   margin: auto;
@@ -350,15 +350,6 @@ a:hover {
   opacity: 0.5; }
 .prev:hover, .next:hover {
   background-color: #111111;
-}
-.slide-text {
-  position: absolute;
-  color: #ffffff;
-  font-size: 15px;
-  padding: 15px;
-  bottom: 15px;
-  width: 100%;
-  text-align: center;
 }
 .slide-index {
   color: #ffffff;
