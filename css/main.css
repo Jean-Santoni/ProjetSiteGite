@@ -157,6 +157,25 @@ textarea {
   text-align: center;
   width:100%;
 }
+footer{
+  background-color: black;
+  display:flex;
+  flex-direction: row;
+  width:100%;
+
+}
+.icon{
+  width: 40px;
+  height: 30px;
+}
+.footerElement{
+  display: flex;
+  color: white;
+  flex-direction: column;
+  margin: 20px;
+
+}
+
 /*
  * Clearfix: contain floats
  *
