@@ -59,13 +59,13 @@
   <span class="dot" onclick="currentSlide(5)"></span>
 </div>
 
-<div id="map" style="width: 600px; height: 400px;"></div>
+<div id="map"class ></div>
 
 <script src="js/script.js"></script>
 <script src="js/map.js"></script>
 
   <!-- Add your site or application content here -->
-  <p>Yo c'est le gite fsdf </p>
+
 
 <footer>
   <?php

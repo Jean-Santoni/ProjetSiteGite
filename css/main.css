@@ -153,6 +153,17 @@ textarea {
   font-family: Calibri, serif;
   color: crimson;
 }
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#map{
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  height: 400px;"
+}
 .center{
   text-align: center;
   width:100%;
@@ -162,17 +173,31 @@ footer{
   display:flex;
   flex-direction: row;
   width:100%;
-
+  justify-content: center;
+  bottom: 0px;
+}
+.divFooter{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
 }
 .icon{
+  display: flex;
   width: 40px;
   height: 30px;
+}
+.textFooter{
+  font-size: medium;
 }
 .footerElement{
   display: flex;
   color: white;
   flex-direction: column;
-  margin: 20px;
+  margin-left: 10%;
+  margin-bottom: 20px;
+
+
 
 }
 
