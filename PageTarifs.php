@@ -33,7 +33,7 @@
     </tr>
     <tr>
       <td>Bonus 1</td>
-      <td colspan="2" class="center">       1000 €</td>
+      <td colspan="2" class="center">1000 €</td>
     </tr> <tr>
     <td>Bonus 2</td>
     <td colspan="2" class="center">560 €</td>

@@ -59,7 +59,7 @@
   <span class="dot" onclick="currentSlide(5)"></span>
 </div>
 
-<div id="map"class ></div>
+<div id="map" class="map"></div>
 
 <script src="js/script.js"></script>
 <script src="js/map.js"></script>
