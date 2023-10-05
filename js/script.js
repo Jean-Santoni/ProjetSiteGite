@@ -1,16 +1,17 @@
 let slideIndex = 0;
+const TEMPS_SLIDE = 3000;
 /*AfficherSlide(slideIndex);*/
 AutoSlide();
-let timer = setInterval(AutoSlide, 3000);
+let timer = setInterval(AutoSlide, TEMPS_SLIDE);
 
 function plusSlides(n) {
   AfficherSlide(slideIndex += n);
-  clearInterval(timer)
-  timer = setInterval(AutoSlide, 3000);
+  ResetTimer();
 }
 
 function currentSlide(n) {
   AfficherSlide(slideIndex = n);
+  ResetTimer();
 }
 
 function AfficherSlide(index) {
@@ -31,6 +32,11 @@ function AfficherSlide(index) {
 
 function AutoSlide(){
   AfficherSlide(slideIndex +=1);
+}
+
+function ResetTimer(){
+  clearInterval(timer)
+  timer = setInterval(AutoSlide, TEMPS_SLIDE);
 }
 
 

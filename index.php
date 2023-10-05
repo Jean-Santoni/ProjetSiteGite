@@ -33,20 +33,19 @@
 </header>
 <div class="carrousel">
   <div class="custom-image fade">
-    <div class="slide-index">1 / 4</div>
-    <img class="slide-img" src="img/Table1.png">
+    <img class="slide-img" src="img/Carousel/figuies-1.jpg">
   </div>
   <div class="custom-image fade">
-    <div class="slide-index">2 / 4</div>
-    <img class="slide-img" src="img/Table2.png">
+    <img class="slide-img" src="img/Carousel/figuies.jpg">
   </div>
   <div class="custom-image fade">
-    <div class="slide-index">3 / 4</div>
-    <img class="slide-img" src="img/Table3.png">
+    <img class="slide-img" src="img/Carousel/figuies-2.jpg">
   </div>
   <div class="custom-image fade">
-    <div class="slide-index">4 / 4</div>
-    <img class="slide-img" src="img/Fond_menu.png">
+    <img class="slide-img" src="img/Carousel/figuies-gr62_w2000.jpg">
+  </div>
+  <div class="custom-image fade">
+    <img class="slide-img" src="img/Carousel/salles-la-source-cascade-de-la-crouzie_w2000.jpg">
   </div>
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -57,6 +56,7 @@
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
   <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
 </div>
 
 <div id="map" style="width: 600px; height: 400px;"></div>
