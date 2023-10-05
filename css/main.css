@@ -292,6 +292,7 @@ footer{
 /* Styles de base pour le menu */
 nav {
   background-color: #333;
+  opacity: 0.5;
   /*position: fixed;*/
 }
 
@@ -300,6 +301,7 @@ ul {
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
+  margin: 0;
 }
 
 li {
@@ -312,6 +314,34 @@ a {
   font-weight: bold;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
+}
+
+/* Styles pour l'en-tête */
+.banniere {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Couleur de fond de l'en-tête */
+  color: #fff; /* Couleur du texte */
+  padding: 10px;
+  margin: 0;
+}
+
+.logo img {
+  max-width: 100px; /* Ajustez la taille du logo selon vos besoins */
+}
+
+.login-button button {
+  background-color: #ff6600; /* Couleur du bouton de connexion */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.title h1 {
+  text-align: center;
 }
 
 /* Styles pour les liens au survol */
