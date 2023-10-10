@@ -12,12 +12,12 @@
     ?>
   <h1 class=" titrePage" >Pages des tarifs</h1>
 <div>
-  <h2> Les différents type de tarifs </h2>
-  <table border="1" class="center">
+  <h2> Les différents types de tarifs </h2>
+  <table class="tab">
     <tr>
       <th></th>
       <th>Moyenne saison</th>
-      <th>Haute saison</th>
+      <th>Hautes saison</th>
     </tr>
     <tr>
       <td>Nuit</td>

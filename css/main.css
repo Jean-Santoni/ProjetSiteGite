@@ -23,9 +23,34 @@ body{
   width: 100%;
   height: 400px;"
 }
-.center{
+ tr, td, th{
+  border:  2px solid black;
+   width: 100px;
+}
+.tab{
+  width: auto;
+  display: flex;
+  margin: 10%;
+  justify-content: center;
   text-align: center;
-  width:100%;
+}
+.iconIndex{
+  margin: 5%;
+}
+.grid-container{
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-rows: repeat(3,1fr);
+  grid-template-columns: repeat(3,1fr);
+}
+
+.ligne{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.center{
+
 }
 footer{
   background-color: #333;

@@ -66,11 +66,48 @@
     Pour des vacances authentiques et au grand air, dans un lieu paisible à l'écart de la circulation, vous vous sentirez chez vous tout en étant dépaysé.
   </p>
 </div>
+<div>
+  <h1> Equipements et Services </h1>
+  <div class="ligne">
+    <img class ="iconIndex" src="./img/iconeChien.png" alt="Icône">
+    <img class ="iconIndex" src="./img/iconeVoiture.png" alt="Icône">
+  </div>
+  <div class="ligne">
+    <img class ="iconIndex" src="./img/iconeTerrasse.png" alt="Icône">
+    <img class ="iconIndex" src="./img/iconeTv.png" alt="Icône">
+  </div>
+  <div class="grid-container">
+    <div class="grid-item">- Abris pour vélo ou VTT</div>
+    <div class="grid-item">- Barbecue</div>
+    <div class="grid-item">- Cuisine équipée</div>
+    <div class="grid-item">- Habitation indépendante</div>
+    <div class="grid-item">- Jardin</div>
+    <div class="grid-item">- Local matériel fermé</div>
+    <div class="grid-item">- Parking privé</div>
+    <div class="grid-item">- Salon de jardin</div>
+    <div class="grid-item">- Terrain non clos</div>
+    <div class="grid-item">- Terrasse</div>
+    <div class="grid-item">- Animaux acceptés (Payant)</div>
+    <div class="grid-item">- Location de linge (Payant)e</div>
+    <div class="grid-item">- Ménage (Payant)</div>
+    <div class="grid-item">- Climatisation</div>
+    <div class="grid-item">- Cheminée</div>
+    <div class="grid-item">- Lave vaisselle</div>
+    <div class="grid-item">- Sèche cheveux</div>
+    <div class="grid-item">- Télévision</div>
+    <div class="grid-item">- Escalade à 5km</div>
+    <div class="grid-item">- VTT - Vélo</div>
+    <div class="grid-item">- Musée à 3km</div>
+    <div class="grid-item">- Randonnée pédestre</div>
 
-<div id="map" class="map"></div>
 
+  </div>
+</div>
+
+<div id="map" class="map">
 <script src="js/script.js"></script>
 <script src="js/map.js"></script>
+</div>
 
 <?php
 include_once ("./HTML/footer.html");

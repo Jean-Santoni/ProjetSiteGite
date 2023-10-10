@@ -3,53 +3,52 @@ EXISTANT
 /********************************************************/
 https://www.facebook.com/gitefiguies
 https://www.tourisme-conques.fr/fr/preparer-mon-sejour/hebergement/f_figuies-3941
-
 /********************************************************/
 DIRECTIVE
 /********************************************************/
 
 Il faut que le site soit responsive par le biais de la technologie Flex.
 
-Mots clé pour référencement.           Gîte, Figuiès, 
+Mots clï¿½ pour rï¿½fï¿½rencement.           Gï¿½te, Figuiï¿½s,
 
 Adresse du gite.
 
-Carte géolocalisation, bien choisir l'API pour les dépendences (pas prioritaire).
+Carte gï¿½olocalisation, bien choisir l'API pour les dï¿½pendences (pas prioritaire).
 
 Pas de framework.
 
-Css réalisé.
+Css rï¿½alisï¿½.
 
-Ajax réalisé.
+Ajax rï¿½alisï¿½.
 
-Php réalisé.
+Php rï¿½alisï¿½.
 
 Pas de Jquery.
 
-Propreté du code et découpage.
+Propretï¿½ du code et dï¿½coupage.
 
 Interaction BDD en Ajax/php
 
 Bdd mySQL.
 
-Carroussel photo JS fabriqué par toi.
+Carroussel photo JS fabriquï¿½ par toi.
 
-Menu qui mène sur des ancres de page ou des pages.       
+Menu qui mï¿½ne sur des ancres de page ou des pages.
 
-(Calendrier pour a visu des disponibilité, administré donc par l'administrateur, Utiliser CMS)
+(Calendrier pour a visu des disponibilitï¿½, administrï¿½ donc par l'administrateur, Utiliser CMS)
 
-Page administration avec login, texte présentation, tarifs(, gestion calendrier), gestion des photos, contact.
+Page administration avec login, texte prï¿½sentation, tarifs(, gestion calendrier), gestion des photos, contact.
 
-Optimisation des photos à l'upload. Test greenIT (pluggin chrome).
+Optimisation des photos ï¿½ l'upload. Test greenIT (pluggin chrome).
 
 
 Pages :
 Header : Menu de selection des pages
-Footer : Contacts(Mail, Téléphone, lien FaceBook), adresse
-    - Accueil -> Titre, Carousel, Description, 
+Footer : Contacts(Mail, Tï¿½lï¿½phone, lien FaceBook), adresse
+    - Accueil -> Titre, Carousel, Description,
     - Calendrier + Localisation(Carte) -> OpenStreetMap ?  OpenLayers ?
     - Tarif
-    - 
+    -
     - Administration
         - Page login
         - Page de modifications -> Description, Tarifs, Calendrier, ajout photo, contact
