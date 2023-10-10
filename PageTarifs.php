@@ -7,11 +7,9 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="tarif">
-  <header>
     <?php
     include_once ("./HTML/header.html");
     ?>
-  </header>
   <h1 class=" titrePage" >Pages des tarifs</h1>
 <div>
   <h2> Les différents type de tarifs </h2>
@@ -40,10 +38,8 @@
   </tr>
   </table>
 </div>
-  <footer>
     <?php
     include_once ("./HTML/footer.html");
     ?>
-  </footer>
 </body>
 </html>
