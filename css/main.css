@@ -23,6 +23,7 @@ body{
   width: 100%;
   height: 400px;"
 }
+
 .tab tr,.tab td,.tab th{
   border:  2px solid black;
    width: 100px;
@@ -33,6 +34,10 @@ body{
   margin: 10%;
   justify-content: center;
   text-align: center;
+}
+.iconArrow{
+  width: 50px;
+  height: 50px;
 }
 .iconIndex{
   display: flex;

@@ -55,7 +55,7 @@
     Notre maison en pierre, située sur les hauteurs, entre vignes, falaises et le causse vous séduira par sa vue magnifique et son environnement agréable.
   </p>
   <div class="indexButton" >
-    <button id="affButtonIntro" >Afficher/Cacher</button>
+      <img id="affButtonIntroDown" class="iconArrow" src="./img/btnArrowDown.png" alt="Icone">
   </div>
   <p id="introText">
     A 20 mn de Rodez, 10 mn de Marcillac et 30 mn de Conques, vous êtes idéalement situés pour visiter quelques un des sites naturels ou culturels remarquables de l'Aveyron.</br></br></br>
@@ -74,6 +74,9 @@
 
     Pour des vacances authentiques et au grand air, dans un lieu paisible à l'écart de la circulation, vous vous sentirez chez vous tout en étant dépaysé.</br></br>
   </p>
+  <div class="indexButton" >
+    <img id="affButtonIntroUp" class="iconArrow" src="./img/btnArrowUp.png" alt="Icone">
+  </div>
 </div>
 <div id="Service">
   <h1> Equipements et Services </h1>
@@ -97,7 +100,7 @@
     </div>
   </div>
   <div class="indexButton" >
-    <button id="affButtonService" >Afficher/Cacher</button>
+    <img id="affButtonServiceDown" class="iconArrow" src="./img/btnArrowDown.png" alt="Icone">
   </div>
   <div id="allServices" class="grid-container">
     <div class="grid-item">- Abris pour vélo ou VTT</div>
@@ -122,6 +125,9 @@
     <div class="grid-item">- VTT - Vélo</div>
     <div class="grid-item">- Musée à 3km</div>
     <div class="grid-item">- Randonnée pédestre</div>
+  </div>
+  <div class="indexButton" >
+    <img id="affButtonServiceUp" class="iconArrow" src="./img/btnArrowUp.png" alt="Icone">
   </div>
 </div>
 

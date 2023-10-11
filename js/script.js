@@ -5,6 +5,14 @@ AutoSlide();
 let timer = setInterval(AutoSlide, TEMPS_SLIDE);
 let introText = document.getElementById('introText');
 introText.style.display = 'none';
+let affButtonIntroUp = document.getElementById('affButtonIntroUp');
+affButtonIntroUp.style.display='none';
+let affButtonIntroDown = document.getElementById('affButtonIntroDown');
+affButtonIntroDown.style.display='block';
+let affButtonServiceUp = document.getElementById('affButtonServiceUp');
+affButtonServiceUp.style.display='none';
+let affButtonServiceDown = document.getElementById('affButtonServiceDown');
+affButtonServiceDown.style.display='block';
 let allServices = document.getElementById('allServices');
 allServices.style.display = 'none';
 
@@ -57,17 +65,31 @@ function StickyNav() {
     navlist.classList.remove("sticky");
   }
 }
-document.getElementById('affButtonIntro').addEventListener('click', function() {
+document.getElementById('affButtonIntroDown').addEventListener('click', function() {
   if (introText.style.display === 'none') {
     introText.style.display = 'block';
-  } else {
-    introText.style.display = 'none';
+    affButtonIntroUp.style.display = "block";
+    affButtonIntroDown.style.display='none';
   }
 });
-document.getElementById('affButtonService').addEventListener('click', function() {
+document.getElementById('affButtonIntroUp').addEventListener('click', function() {
+  if (introText.style.display === 'block') {
+    introText.style.display = 'none';
+    affButtonIntroUp.style.display = "none";
+    affButtonIntroDown.style.display='block';
+  }
+});
+document.getElementById('affButtonServiceDown').addEventListener('click', function() {
   if (allServices.style.display === 'none') {
     allServices.style.display = 'grid';
-  } else {
+    affButtonServiceUp.style.display = "block";
+    affButtonServiceDown.style.display='none';
+  }
+});
+document.getElementById('affButtonServiceUp').addEventListener('click', function() {
+  if (allServices.style.display === 'grid') {
     allServices.style.display = 'none';
+    affButtonServiceUp.style.display = "none";
+    affButtonServiceDown.style.display='block';
   }
 });
