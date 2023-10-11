@@ -23,7 +23,7 @@ body{
   width: 100%;
   height: 400px;"
 }
- tr, td, th{
+.tab tr,.tab td,.tab th{
   border:  2px solid black;
    width: 100px;
 }
@@ -243,5 +243,9 @@ a:hover {
   width: 100%;
 }
 
+#calendar {
+  margin: 5%;
+  --fc-border-color: black;
+}
 
 
