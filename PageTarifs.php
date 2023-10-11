@@ -8,7 +8,7 @@
 </head>
 <body class="tarif">
     <?php
-    include_once ("./HTML/header.html");
+    include_once("./HTML/header.php");
     ?>
   <h1 class=" titrePage" >Pages des tarifs</h1>
 <div>

@@ -22,14 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Si l'authentification réussit
   if ($result != null) {
     // Stocker l'identifiant de l'utilisateur dans une session
-    $_SESSION['username'] = $username;
+    $_SESSION['user'] = $username;
 
     // Rediriger vers la page de données
     header('Location: index.php');
     exit;
   } else {
     $error_message = "Nom d'utilisateur ou mot de passe incorrect";
-    echo "C'est dla meeeeerrde";
+    header('Location: ./html/Login.html');
+    exit;
   }
 }
 ?>

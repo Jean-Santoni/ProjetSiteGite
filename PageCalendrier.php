@@ -27,7 +27,7 @@
 </head>
 <body>
 <?php
-include_once ("./HTML/header.html");
+include_once("./HTML/header.php");
 ?>
 <div id='calendar'></div>
 <?php

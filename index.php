@@ -17,7 +17,7 @@
 
 <body>
   <?php
-  include_once ("./HTML/header.html");
+  include_once("./HTML/header.php");
   ?>
 <div class="carrousel">
   <div class="custom-image fade">
