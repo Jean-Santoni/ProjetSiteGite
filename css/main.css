@@ -35,13 +35,39 @@ body{
   text-align: center;
 }
 .iconIndex{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   margin: 5%;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+#allServices{
+  display: none;
+}
+#introText{
+  text-align: center;
+  display: none;
+}
+.indexButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+
 }
 .grid-container{
   display: grid;
-  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
   grid-template-rows: repeat(3,1fr);
   grid-template-columns: repeat(3,1fr);
+}
+.grid-item{
+  padding: 15px;
+  text-align: center;
 }
 
 .ligne{

@@ -53,4 +53,19 @@ function StickyNav() {
     navlist.classList.remove("sticky");
   }
 }
-
+document.getElementById('affButtonIntro').addEventListener('click', function() {
+  var content = document.getElementById('introText');
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+  } else {
+    content.style.display = 'none';
+  }
+});
+document.getElementById('affButtonService').addEventListener('click', function() {
+  var content = document.getElementById('allServices');
+  if (content.style.display === 'none') {
+    content.style.display = 'grid';
+  } else {
+    content.style.display = 'none';
+  }
+});
