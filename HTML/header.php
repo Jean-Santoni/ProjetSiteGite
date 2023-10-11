@@ -31,7 +31,7 @@
       <li><a href="./PageTarifs.php">Tarifs</a></li>
       <?php
       if(isset($_SESSION['user'])){
-        echo "<li><a href=\"#\">Admin</a></li>";
+        echo "<li><a href=\"./PageAdmin.php\">Admin</a></li>";
       }
       ?>
     </ul>
