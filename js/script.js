@@ -3,6 +3,10 @@ const TEMPS_SLIDE = 3000;
 /*AfficherSlide(slideIndex);*/
 AutoSlide();
 let timer = setInterval(AutoSlide, TEMPS_SLIDE);
+let introText = document.getElementById('introText');
+introText.style.display = 'none';
+let allServices = document.getElementById('allServices');
+allServices.style.display = 'none';
 
 function plusSlides(n) {
   AfficherSlide(slideIndex += n);
@@ -54,18 +58,16 @@ function StickyNav() {
   }
 }
 document.getElementById('affButtonIntro').addEventListener('click', function() {
-  var content = document.getElementById('introText');
-  if (content.style.display === 'none') {
-    content.style.display = 'block';
+  if (introText.style.display === 'none') {
+    introText.style.display = 'block';
   } else {
-    content.style.display = 'none';
+    introText.style.display = 'none';
   }
 });
 document.getElementById('affButtonService').addEventListener('click', function() {
-  var content = document.getElementById('allServices');
-  if (content.style.display === 'none') {
-    content.style.display = 'grid';
+  if (allServices.style.display === 'none') {
+    allServices.style.display = 'grid';
   } else {
-    content.style.display = 'none';
+    allServices.style.display = 'none';
   }
 });

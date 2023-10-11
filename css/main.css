@@ -45,11 +45,11 @@ body{
   height: 50px;
 }
 #allServices{
-  display: none;
+  /*display: none;*/
 }
 #introText{
   text-align: center;
-  display: none;
+  /*display: none;*/
 }
 .indexButton{
   display: flex;
