@@ -91,5 +91,24 @@ document.getElementById('affButtonServiceUp').addEventListener('click', function
     allServices.style.display = 'none';
     affButtonServiceUp.style.display = "none";
     affButtonServiceDown.style.display='block';
+
+  }
+
+});
+document.getElementById('login').addEventListener('submit', function(event) {
+  event.preventDefault();
+  alert('Tous les champs doivent être remplis.');
+  var param1 = document.querySelector('input[name="username"]').value;
+  var param2 = document.querySelector('input[name="password"]').value;
+
+  // Ici, vous pouvez effectuer la validation des données si nécessaire
+
+  // Simuler la requête POST
+  if (param1 === '' || param2 === '') {
+    // Afficher la pop-up en cas d'erreur
+
+  } else {
+    // Envoyer les données (simulées) au serveur
+    // Si tout va bien, vous pouvez ajouter votre code ici pour traiter la réponse
   }
 });

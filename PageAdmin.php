@@ -10,7 +10,7 @@
 <?php
 include_once("./HTML/header.php");
 if (!isset($_SESSION['user'])) {
-  header('Location: ./html/Login.html');
+  header('Location: Login.php');
   exit;
 }
 ?>

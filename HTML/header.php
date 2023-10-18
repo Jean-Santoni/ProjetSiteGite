@@ -18,7 +18,7 @@
     }else{
       echo "
         <div class=\"login-button\">
-          <button onclick=\"window.location.href = './HTML/Login.html'\">Login</button>
+          <button onclick=\"window.location.href = 'Login.php'\">Login</button>
         </div>";
     }
     ?>
