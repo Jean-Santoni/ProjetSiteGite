@@ -253,4 +253,10 @@ a:hover {
   --fc-border-color: black;
 }
 
+textarea {
+  resize: none;
+  width: 80%;
+  height: 200px;
+}
+
 

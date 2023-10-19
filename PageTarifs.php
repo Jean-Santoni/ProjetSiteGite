@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Page des tarifs</title>
   <link rel="stylesheet" href="css/main.css">
+
 </head>
 <body class="tarif">
     <?php
@@ -37,8 +38,10 @@
   </tr>
   </table>
 </div>
-    <?php
-    include_once ("./HTML/footer.html");
-    ?>
+</br></br></br>
+
+<?php
+include_once ("./HTML/footer.html");
+?>
 </body>
 </html>

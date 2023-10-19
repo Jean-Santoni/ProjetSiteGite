@@ -52,3 +52,18 @@ Footer : Contacts(Mail, T�l�phone, lien FaceBook), adresse
     - Administration
         - Page login
         - Page de modifications -> Description, Tarifs, Calendrier, ajout photo, contact
+
+
+A Faire
+AJAX
+Connexion rate -> Afficher message
+Page admin
+  -Mise a jour avec XML ?
+  -Upload d'image ? Suppression d'image ?
+
+A modifier :
+  -Carousel (nom balises)
+
+FINI :
+  -Header.php
+

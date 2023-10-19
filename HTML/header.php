@@ -18,7 +18,7 @@
     }else{
       echo "
         <div class=\"login-button\">
-          <button onclick=\"window.location.href = 'Login.php'\">Login</button>
+          <button onclick=\"window.location.href = './Login.php'\">Login</button>
         </div>";
     }
     ?>
@@ -36,5 +36,6 @@
       ?>
     </ul>
   </nav>
+  <script src="./js/menuSticky.js"></script>
 </header>
 </html>
