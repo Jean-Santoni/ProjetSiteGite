@@ -13,28 +13,28 @@
 </head>
 
 <body>
-<?php
-include_once("./HTML/header.php");
-?>
-<div class="carrousel">
-  <div class="custom-image fade">
-    <img class="slide-img" src="img/Carousel/figuies-1.jpg">
+  <?php
+  include_once("./HTML/header.php");
+  ?>
+  <div class="carrousel">
+    <div class="custom-image fade">
+      <img class="slide-img" src="img/Carousel/figuies-1.jpg">
+    </div>
+   <div class="custom-image fade">
+     <img class="slide-img" src="img/Carousel/figuies.jpg">
+    </div>
+    <div class="custom-image fade">
+     <img class="slide-img" src="img/Carousel/figuies-2.jpg">
+    </div>
+    <div class="custom-image fade">
+     <img class="slide-img" src="img/Carousel/figuies-gr62_w2000.jpg">
+    </div>
+    <div class="custom-image fade">
+     <img class="slide-img" src="img/Carousel/salles-la-source-cascade-de-la-crouzie_w2000.jpg">
+   </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
-  <div class="custom-image fade">
-    <img class="slide-img" src="img/Carousel/figuies.jpg">
-  </div>
-  <div class="custom-image fade">
-    <img class="slide-img" src="img/Carousel/figuies-2.jpg">
-  </div>
-  <div class="custom-image fade">
-    <img class="slide-img" src="img/Carousel/figuies-gr62_w2000.jpg">
-  </div>
-  <div class="custom-image fade">
-    <img class="slide-img" src="img/Carousel/salles-la-source-cascade-de-la-crouzie_w2000.jpg">
-  </div>
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
 <br>
 <div class="slide-dot">
   <span class="dot" onclick="currentSlide(1)"></span>
@@ -44,35 +44,35 @@ include_once("./HTML/header.php");
   <span class="dot" onclick="currentSlide(5)"></span>
 </div>
 
-<div>
-  <h1>Figuiès</h1>
-  <p>
-    <?php
-    $xml = new DOMDocument();
-    $xml->load("./DonneesAffichees.xml");
-    $elements = $xml->getElementsByTagName('DESCRIPTION');
-    foreach ($elements as $element) {
-      echo nl2br($element->nodeValue);
-    }
-    ?>
-  </p>
+  <div class="textIndex">
+   <h1>Figuiès</h1>
+   <p>
+      <?php
+      $xml = new DOMDocument();
+      $xml->load("./DonneesAffichees.xml");
+     $elements = $xml->getElementsByTagName('DESCRIPTION');
+     foreach ($elements as $element) {
+        echo nl2br($element->nodeValue);
+      }
+      ?>
+   </p>
   <div class="indexButton" >
       <img id="affButtonIntroDown" class="iconArrow" src="./img/btnArrowDown.png" alt="Icone">
   </div>
   <p id="introText">
     <?php
-    $xml = new DOMDocument();
-    $xml->load("./DonneesAffichees.xml");
-    $elements = $xml->getElementsByTagName('DESCDETAIL');
-    foreach ($elements as $element) {
-      echo nl2br($element->nodeValue);
-    }
-    ?>
-  </p>
-  <div class="indexButton" >
-    <img id="affButtonIntroUp" class="iconArrow" src="./img/btnArrowUp.png" alt="Icone">
+      $xml = new DOMDocument();
+     $xml->load("./DonneesAffichees.xml");
+     $elements = $xml->getElementsByTagName('DESCDETAIL');
+     foreach ($elements as $element) {
+       echo nl2br($element->nodeValue);
+     }
+      ?>
+    </p>
+    <div class="indexButton" >
+     <img id="affButtonIntroUp" class="iconArrow" src="./img/btnArrowUp.png" alt="Icone">
+    </div>
   </div>
-</div>
 <div id="Service">
   <h1> Equipements et Services </h1>
   <div class="ligne">

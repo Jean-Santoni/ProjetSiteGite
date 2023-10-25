@@ -5,7 +5,7 @@
   <title>Title</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body class="bodyAdmin">
 <?php
 include_once("./HTML/header.php");
 if (!isset($_SESSION['user'])) {

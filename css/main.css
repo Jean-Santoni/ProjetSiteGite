@@ -1,18 +1,21 @@
 
-.tarif{
-  background-color: whitesmoke;
-}
+
 .titrePage{
   font-family: Calibri, serif;
   color: crimson;
 }
+.textIndex{
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.bodyAdmin{
+  text-align: center;
+}
 body{
   display: flex;
   flex-direction: column;
-
   margin : 0;
-
-
 }
 #map{
   display: flex;
