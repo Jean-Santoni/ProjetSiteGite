@@ -84,7 +84,7 @@
 <?php
 include_once("./HTML/header.php");
 if (!isset($_SESSION['user'])) {
-  header('Location: Login.php');
+  echo '<script>window.location="login.php"</script>';
   exit;
 }
 ?>
