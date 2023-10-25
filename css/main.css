@@ -9,8 +9,10 @@
 body{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+
   margin : 0;
+
+
 }
 #map{
   display: flex;
@@ -23,16 +25,16 @@ body{
   width: 100%;
   height: 400px;"
 }
-
+.tab th {
+  width: 33%;
+}
 .tab tr,.tab td,.tab th{
   border:  2px solid black;
-   width: 100px;
+  text-align: center;
 }
 .tab{
-  width: auto;
-  display: flex;
-  margin: 10%;
-  justify-content: center;
+  width: 100%;
+  height: auto;
   text-align: center;
 }
 .iconArrow{
@@ -78,18 +80,22 @@ body{
 .ligne{
   display:flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
 }
-.center{
 
-}
 footer{
   background-color: #333;
   display:flex;
   flex-direction: row;
   width:100%;
   justify-content: center;
-  bottom: 0px;
+  bottom: 0;
+  position: relative;
+  overflow: auto;
+
 }
 .divFooter{
   display:flex;
