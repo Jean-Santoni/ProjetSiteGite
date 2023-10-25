@@ -19,6 +19,14 @@
         },
         locale: 'fr',
         firstDay: 1
+        <?php
+        $xml = new DOMDocument();
+        $xml->load("./DonneesAffichees.xml");
+        $elements = $xml->getElementsByTagName('CALENDAR');
+        foreach ($elements as $element) {
+          echo $element->nodeValue;
+        }
+        ?>
       });
       calendar.render();
     });
