@@ -64,7 +64,11 @@
               paragraphe.innerHTML += "{ title: '"+ event.title+"', start: '" + event.startStr+"', display: '" + event.display+"', backgroundColor: '" + event.backgroundColor+"' }, " ;
             }
           });
-          paragraphe.innerHTML = paragraphe.innerHTML.substring(0,paragraphe.innerHTML.length-2) + " ]";
+          if (paragraphe.innerHTML.toString().includes('start')){
+            paragraphe.innerHTML = paragraphe.innerHTML.substring(0,paragraphe.innerHTML.length-2) + " ]";
+          }else{
+            paragraphe.innerHTML = '';
+          }
         }
         <?php
         $xml = new DOMDocument();
@@ -84,12 +88,14 @@
 <?php
 include_once("./HTML/header.php");
 if (!isset($_SESSION['user'])) {
-  echo '<script>window.location="login.php"</script>';
+  /*echo '<script>window.location="login.php"</script>';*/
   exit;
 }
 ?>
 <h1>Page Admin</h1>
 <form action="./EnregistrementXML.php" method="post">
+  <label for="description">Description :</label><br>
+  <textarea id="description" name="description"></textarea><br><br>
   <label for="description">Description :</label><br>
   <textarea id="description" name="description" required><?php
     $xml = new DOMDocument();
