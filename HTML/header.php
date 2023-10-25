@@ -2,12 +2,12 @@
 <html lang="en">
 <header>
   <div class="banniere">
-  <div class="logo">
-    <img src="./img/LOGO-final-fond-transparent.png" alt="Logo du site">
-  </div>
-  <div class="title">
-    <h1>Gîte Figuiès</h1>
-  </div>
+    <div class="logo">
+      <img src="./img/LOGO-final-fond-transparent.png" alt="Logo du site">
+    </div>
+    <div class="title">
+      <h1>Gîte Figuiès</h1>
+    </div>
     <?php
     session_start();
     if(isset($_SESSION['user'])){
@@ -22,7 +22,7 @@
         </div>";
     }
     ?>
-</div>
+  </div>
   <nav id="navlist">
     <ul>
       <li><a href="./index.php">Accueil</a></li>

@@ -287,12 +287,12 @@ textarea {
   position: relative;
   z-index: 1;
   margin-left: 200px;
+  max-width: 1100px;
+  margin: 20px auto;
 }
 
 #calendar {
   --fc-bg-event-opacity: 1;
-  max-width: 1100px;
-  margin: 20px auto;
 }
 #EventsCalendar{
   display: none;
