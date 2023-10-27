@@ -2,6 +2,9 @@
 <html lang='fr'>
 <head>
   <meta charset='utf-8' />
+  <title>Gîte Figuiès Calendrier</title>
+  <link rel="icon" href="./img/LOGO-final-fond-transparent.png" type="image/png">
+
   <link rel="stylesheet" href="css/main.css">
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
   <script>

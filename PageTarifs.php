@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Page des tarifs</title>
+  <title>Gîte Figuiès Tarifs</title>
+  <link rel="icon" href="./img/LOGO-final-fond-transparent.png" type="image/png">
+
   <link rel="stylesheet" href="css/main.css">
 
 </head>

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+?>
 <header>
   <div class="banniere">
     <div class="logo">
-      <img src="./img/LOGO-final-fond-transparent.png" alt="Logo du site">
+      <img src="./img/Logo_x100.png" alt="Logo du site">
     </div>
     <div class="title">
       <h1>Gîte Figuiès</h1>
     </div>
     <?php
-    session_start();
     if(isset($_SESSION['user'])){
       echo "
         <div class=\"login-button\">

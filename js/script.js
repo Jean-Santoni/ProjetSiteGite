@@ -1,5 +1,5 @@
 let slideIndex = 0;
-const TEMPS_SLIDE = 3000;
+const TEMPS_SLIDE = 8000;
 /*AfficherSlide(slideIndex);*/
 AutoSlide();
 let timer = setInterval(AutoSlide, TEMPS_SLIDE);
@@ -78,23 +78,5 @@ document.getElementById('affButtonServiceUp').addEventListener('click', function
     affButtonServiceUp.style.display = "none";
     affButtonServiceDown.style.display='block';
 
-  }
-
-});
-document.getElementById('login').addEventListener('submit', function(event) {
-  event.preventDefault();
-  alert('Tous les champs doivent être remplis.');
-  var param1 = document.querySelector('input[name="username"]').value;
-  var param2 = document.querySelector('input[name="password"]').value;
-
-  // Ici, vous pouvez effectuer la validation des données si nécessaire
-
-  // Simuler la requête POST
-  if (param1 === '' || param2 === '') {
-    // Afficher la pop-up en cas d'erreur
-
-  } else {
-    // Envoyer les données (simulées) au serveur
-    // Si tout va bien, vous pouvez ajouter votre code ici pour traiter la réponse
   }
 });

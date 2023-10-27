@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Gîte Figuiès Admin</title>
+  <link rel="icon" href="./img/LOGO-final-fond-transparent.png" type="image/png">
+
   <link rel="stylesheet" href="css/main.css">
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
   <script>
@@ -88,14 +90,15 @@
 <?php
 include_once("./HTML/header.php");
 if (!isset($_SESSION['user'])) {
-  /*echo '<script>window.location="login.php"</script>';*/
+  echo '<script>window.location="login.php"</script>';
   exit;
 }
 ?>
 <h1>Page Admin</h1>
-<form action="./EnregistrementXML.php" method="post">
-  <label for="description">Description :</label><br>
-  <textarea id="description" name="description"></textarea><br><br>
+<form action="./EnregistrementXML.php" method="post" enctype="multipart/form-data">
+  <label for="imageCarousel">Image Carousel :</label><br>
+  <input name="imageCarousel" type="file" accept="image/*" id="imageCarousel"><br><br>
+
   <label for="description">Description :</label><br>
   <textarea id="description" name="description" required><?php
     $xml = new DOMDocument();

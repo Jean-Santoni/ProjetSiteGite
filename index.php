@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Gîte Figuiès</title>
+  <link rel="icon" href="./img/LOGO-final-fond-transparent.png" type="image/png">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/main.css">
-
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <link rel="icon" href="./img/LOGO-final-fond-transparent.png" type="image/png">
 </head>
 
 <body>
@@ -17,31 +17,41 @@
   include_once("./HTML/header.php");
   ?>
   <div class="carrousel">
-    <div class="custom-image fade">
-      <img class="slide-img" src="img/Carousel/figuies-1.jpg">
-    </div>
-   <div class="custom-image fade">
-     <img class="slide-img" src="img/Carousel/figuies.jpg">
-    </div>
-    <div class="custom-image fade">
-     <img class="slide-img" src="img/Carousel/figuies-2.jpg">
-    </div>
-    <div class="custom-image fade">
-     <img class="slide-img" src="img/Carousel/figuies-gr62_w2000.jpg">
-    </div>
-    <div class="custom-image fade">
-     <img class="slide-img" src="img/Carousel/salles-la-source-cascade-de-la-crouzie_w2000.jpg">
-   </div>
+    <?php
+    $directory = './img/Carousel'; // Remplacez ceci par le chemin du dossier que vous souhaitez lister.
+
+    // Utilisez scandir() pour lister les éléments du dossier.
+    $files = scandir($directory);
+
+    // Parcourez les éléments et affichez-les.
+    foreach ($files as $file) {
+      if ($file != '.' && $file != '..') {
+        echo "<div class=\"custom-image fade\">
+            <img class=\"slide-img\" src=\"img/Carousel/$file\"  loading=\"lazy\">
+            </div>";
+      }
+    }
+    ?>
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
 <br>
 <div class="slide-dot">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
+  <?php
+  $directory = './img/Carousel'; // Remplacez ceci par le chemin du dossier que vous souhaitez lister.
+
+  // Utilisez scandir() pour lister les éléments du dossier.
+  $files = scandir($directory);
+  $fileCount = 0;
+
+  // Parcourez les éléments et affichez-les.
+  foreach ($files as $file) {
+    if ($file != '.' && $file != '..') {
+      $fileCount ++;
+      echo "<span class=\"dot\" onclick=\"currentSlide($fileCount)\"></span>";
+    }
+  }
+  ?>
 </div>
 
   <div class="textIndex">
@@ -57,7 +67,7 @@
       ?>
    </p>
   <div class="indexButton" >
-      <img id="affButtonIntroDown" class="iconArrow" src="./img/btnArrowDown.png" alt="Icone">
+      <img id="affButtonIntroDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone">
   </div>
   <p id="introText">
     <?php
@@ -70,32 +80,32 @@
       ?>
     </p>
     <div class="indexButton" >
-     <img id="affButtonIntroUp" class="iconArrow" src="./img/btnArrowUp.png" alt="Icone">
+     <img id="affButtonIntroUp" class="iconArrow" src="./img/btnArrowUp_x50.png" alt="Icone">
     </div>
   </div>
 <div id="Service">
   <h1> Equipements et Services </h1>
   <div class="ligne">
     <div class ="iconIndex">
-    <img class ="iconIndex" src="./img/iconeChien.png" alt="Icône">
+    <img class ="iconIndex" src="./img/iconeChien_x50.png" alt="Icône">
       <p> Animaux acceptés</p>
     </div>
     <div class ="iconIndex">
-    <img class ="iconIndex" src="./img/iconeVoiture.png" alt="Icône">
+    <img class ="iconIndex" src="./img/iconeVoiture_x50.png" alt="Icône">
       <p> Parking privé</p>
     </div>
 
     <div class ="iconIndex">
-      <img class ="iconIndex" src="./img/iconeTerrasse.png" alt="Icône">
+      <img class ="iconIndex" src="./img/iconeTerrasse_x50.png" alt="Icône">
       <p>Terrasse</p>
     </div>
     <div class ="iconIndex">
-      <img class ="iconIndex" src="./img/iconeTv.png" alt="Icône">
+      <img class ="iconIndex" src="./img/iconeTv_x50.png" alt="Icône">
       <p>Télévision</p>
     </div>
   </div>
   <div class="indexButton" >
-    <img id="affButtonServiceDown" class="iconArrow" src="./img/btnArrowDown.png" alt="Icone">
+    <img id="affButtonServiceDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone">
   </div>
   <div id="allServices" class="grid-container">
     <div class="grid-item">- Abris pour vélo ou VTT</div>
@@ -122,7 +132,7 @@
     <div class="grid-item">- Randonnée pédestre</div>
   </div>
   <div class="indexButton" >
-    <img id="affButtonServiceUp" class="iconArrow" src="./img/btnArrowUp.png" alt="Icone">
+    <img id="affButtonServiceUp" class="iconArrow" src="./img/btnArrowUp_x50.png" alt="Icone">
   </div>
 </div>
 
