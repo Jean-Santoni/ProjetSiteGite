@@ -6,7 +6,7 @@ session_start();
 <header>
   <div class="banniere">
     <div class="logo">
-      <img src="./img/Logo_x100.png" alt="Logo du site">
+      <img src="./img/Logo_x100.png" alt="Logo du site" loading="lazy">
     </div>
     <div class="title">
       <h1>Gîte Figuiès</h1>

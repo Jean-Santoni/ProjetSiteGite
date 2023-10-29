@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Gîte Figuiès Tarifs</title>
-  <link rel="icon" href="./img/LOGO-final-fond-transparent.png" type="image/png">
+  <link rel="icon" href="./img/Logo_x32.png" type="image/png">
 
   <link rel="stylesheet" href="css/main.css">
 

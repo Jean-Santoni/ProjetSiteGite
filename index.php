@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Gîte Figuiès</title>
-  <link rel="icon" href="./img/LOGO-final-fond-transparent.png" type="image/png">
+  <link rel="icon" href="./img/Logo_x32.png" type="image/png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/main.css">
@@ -67,7 +67,7 @@
       ?>
    </p>
   <div class="indexButton" >
-      <img id="affButtonIntroDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone">
+      <img id="affButtonIntroDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone" loading="lazy">
   </div>
   <p id="introText">
     <?php
@@ -80,32 +80,32 @@
       ?>
     </p>
     <div class="indexButton" >
-     <img id="affButtonIntroUp" class="iconArrow" src="./img/btnArrowUp_x50.png" alt="Icone">
+     <img id="affButtonIntroUp" class="iconArrow" src="./img/btnArrowUp_x50.png" alt="Icone" loading="lazy">
     </div>
   </div>
 <div id="Service">
   <h1> Equipements et Services </h1>
   <div class="ligne">
     <div class ="iconIndex">
-    <img class ="iconIndex" src="./img/iconeChien_x50.png" alt="Icône">
+    <img class ="iconIndex" src="./img/iconeChien_x50.png" alt="Icône" loading="lazy">
       <p> Animaux acceptés</p>
     </div>
     <div class ="iconIndex">
-    <img class ="iconIndex" src="./img/iconeVoiture_x50.png" alt="Icône">
+    <img class ="iconIndex" src="./img/iconeVoiture_x50.png" alt="Icône" loading="lazy">
       <p> Parking privé</p>
     </div>
 
     <div class ="iconIndex">
-      <img class ="iconIndex" src="./img/iconeTerrasse_x50.png" alt="Icône">
+      <img class ="iconIndex" src="./img/iconeTerrasse_x50.png" alt="Icône" loading="lazy">
       <p>Terrasse</p>
     </div>
     <div class ="iconIndex">
-      <img class ="iconIndex" src="./img/iconeTv_x50.png" alt="Icône">
+      <img class ="iconIndex" src="./img/iconeTv_x50.png" alt="Icône" loading="lazy">
       <p>Télévision</p>
     </div>
   </div>
   <div class="indexButton" >
-    <img id="affButtonServiceDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone">
+    <img id="affButtonServiceDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone" loading="lazy">
   </div>
   <div id="allServices" class="grid-container">
     <div class="grid-item">- Abris pour vélo ou VTT</div>
@@ -132,7 +132,7 @@
     <div class="grid-item">- Randonnée pédestre</div>
   </div>
   <div class="indexButton" >
-    <img id="affButtonServiceUp" class="iconArrow" src="./img/btnArrowUp_x50.png" alt="Icone">
+    <img id="affButtonServiceUp" class="iconArrow" src="./img/btnArrowUp_x50.png" alt="Icone" loading="lazy">
   </div>
 </div>
 
