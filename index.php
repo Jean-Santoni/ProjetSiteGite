@@ -82,7 +82,8 @@
       <img id="affButtonIntroDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone" loading="lazy" onclick="toggleExpendIntro()">
     </div>
   </div>
-<div id="Service">
+  <div id="Service"></div>
+<div>
   <h1> Equipements et Services </h1>
   <div class="ligne">
     <div class ="iconIndex">
@@ -104,29 +105,50 @@
     </div>
   </div>
 
-  <div id="allServices" class=" allServices grid-container">
-    <div class="grid-item">- Abris pour vélo ou VTT</div>
-    <div class="grid-item">- Barbecue</div>
-    <div class="grid-item">- Cuisine équipée</div>
-    <div class="grid-item">- Habitation indépendante</div>
-    <div class="grid-item">- Jardin</div>
-    <div class="grid-item">- Local matériel fermé</div>
-    <div class="grid-item">- Parking privé</div>
-    <div class="grid-item">- Salon de jardin</div>
-    <div class="grid-item">- Terrain non clos</div>
-    <div class="grid-item">- Terrasse</div>
-    <div class="grid-item">- Animaux acceptés (Payant)</div>
-    <div class="grid-item">- Location de linge (Payante)</div>
-    <div class="grid-item">- Ménage (Payant)</div>
-    <div class="grid-item">- Climatisation</div>
-    <div class="grid-item">- Cheminée</div>
-    <div class="grid-item">- Lave vaisselle</div>
-    <div class="grid-item">- Sèche cheveux</div>
-    <div class="grid-item">- Télévision</div>
-    <div class="grid-item">- Escalade à 5km</div>
-    <div class="grid-item">- VTT - Vélo</div>
-    <div class="grid-item">- Musée à 3km</div>
-    <div class="grid-item">- Randonnée pédestre</div>
+  <div id="allServices" class=" allServices ">
+    <table class="tabService">
+      <tr>
+        <td>Abris pour vélo ou VTT</td>
+        <td>Barbecue</td>
+        <td>Cuisine équipée</td>
+      </tr>
+      <tr>
+        <td>Habitation indépendante</td>
+        <td>Jardin</td>
+        <td>Local matériel fermé</td>
+      </tr>
+      <tr>
+        <td>Cuisine équipée</td>
+        <td>Parking privé</td>
+        <td>Salon de jardin</td>
+      </tr>
+      <tr>
+        <td>Terrain non clos</td>
+        <td>Terrasse</td>
+        <td>Animaux acceptés (Payant)</td>
+      </tr>
+      <tr>
+        <td>Location de linge (Payante)</td>
+        <td>Ménage (Payant)</td>
+        <td>Climatisation</td>
+      </tr>
+      <tr>
+        <td>Cheminée</td>
+        <td>Lave vaisselle</td>
+        <td>Sèche cheveux</td>
+      </tr>
+      <tr>
+        <td>Télévision</td>
+        <td>Escalade à 5km</td>
+        <td>VTT - Vélo</td>
+      </tr>
+      <tr>
+        <td>Musée à 3km</td>
+        <td>Randonnée pédestre</td>
+      </tr>
+
+    </table>
+
   </div>
   <div class="indexButton" >
     <img id="affButtonServiceDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone" loading="lazy" onclick=" toggleExpendService()">

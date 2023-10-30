@@ -42,6 +42,14 @@ body{
   height: auto;
   text-align: center;
 }
+.tabService{
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.tabService td {
+  padding: 10px;
+}
 .iconArrow{
   width: 50px;
   height: 50px;

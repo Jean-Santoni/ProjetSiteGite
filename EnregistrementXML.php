@@ -5,23 +5,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $descDetail = trim($_POST['descDetail']);
   $eventCalendar = trim($_POST['EventsCalendar']);
 
-  // Vérifiez s'il y a des erreurs lors de l'envoi du fichier
-  if ($_FILES["imageCarousel"]["error"] == 0) {
-    $uploadDir = "./img/Carousel/"; // Répertoire où vous souhaitez enregistrer les images
-
-    // Le nom du fichier téléversé
-    $uploadFile = $uploadDir . basename($_FILES["imageCarousel"]["name"]);
-
-    // Déplacez le fichier téléversé vers l'emplacement souhaité
-    if (move_uploaded_file($_FILES["imageCarousel"]["tmp_name"], $uploadFile)) {
-      echo "L'image a été téléchargée avec succès.";
-    } else {
-      echo "Une erreur s'est produite lors du téléchargement de l'image.";
-      exit;
-    }
-  } else {
-    echo "Erreur lors du téléchargement du fichier.";
-  }
 
   $xml = new DOMDocument();
   $xml->load("./DonneesAffichees.xml");
