@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+<?php
+include_once("./HTML/header.php");
+if (!isset($_SESSION['user'])) {
+  echo '<script>window.location="login.php"</script>';
+  exit;
+}
+?>
 <head>
   <meta charset="UTF-8">
   <title>Gîte Figuiès Admin</title>
@@ -18,8 +25,8 @@
       let idCont = -1;
 
       let colors = {};
-      colors['Réservé'] = 'rgb(0,255,0,0.5)';
-      colors['Non disponible'] = 'rgb(255,0,0,0.5)';
+      colors['Réservé'] = 'rgb(255,0,0,0.5)';
+      colors['Non disponible'] = 'rgb(25,25,25,0.5)';
 
       new Draggable(containerEl, {
         itemSelector: '.fc-event',
@@ -81,17 +88,63 @@
     });
   </script>
 
+
 </head>
 <body class="bodyAdmin">
+<h1>Page Admin</h1>
 <?php
-include_once("./HTML/header.php");
-if (!isset($_SESSION['user'])) {
-  echo '<script>window.location="login.php"</script>';
-  exit;
+function compressImage($source, $destination, $quality) {
+  // Get image info
+  $imgInfo = getimagesize($source);
+  $mime = $imgInfo['mime'];
+
+  // Create a new image from file
+  switch($mime){
+    case 'image/jpeg':
+      $image = imagecreatefromjpeg($source);
+      break;
+    case 'image/png':
+      $image = imagecreatefrompng($source);
+      break;
+    case 'image/gif':
+      $image = imagecreatefromgif($source);
+      break;
+    default:
+      $image = imagecreatefromjpeg($source);
+  }
+
+  // Save image
+  imagejpeg($image, $destination, $quality);
+
+  // Return compressed image
+  return $destination;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST')
+{
+  if ($_FILES["imageInput"]["error"] == 0) {
+    $uploadDir = "./img/Carousel/"; // Répertoire où vous souhaitez enregistrer les images
+
+    // Le nom du fichier téléversé
+    $imageUploadPath = $uploadDir . basename($_FILES["imageInput"]["name"]);
+
+    $imageTemp = $_FILES["imageInput"]["tmp_name"];
+    $compressedImage = compressImage($imageTemp, $imageUploadPath, 75);
+
+    // Déplacez le fichier téléversé vers l'emplacement souhaité
+
+  } else {
+    echo "Erreur lors du téléchargement du fichier.";
+  }
 }
 ?>
-<h1>Page Admin</h1>
-<form action="./EnregistrementXML.php" method="post">
+<form id="imageUploadForm" action="./PageAdmin.php" method="post" enctype="multipart/form-data">
+  <label for="imageInput">Image Carousel :</label><br>
+  <input name="imageInput" type="file" accept="image/*" id="imageInput"><br><br>
+  <input type="submit" value="Valider">
+</form>
+<form action="./EnregistrementXML.php" method="post" enctype="multipart/form-data">
+
   <label for="description">Description :</label><br>
   <textarea id="description" name="description" required><?php
     $xml = new DOMDocument();

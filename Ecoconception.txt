@@ -1,0 +1,35 @@
+
+Cache-control headers :
+  Xampp -> Apache -> config -> httpd.conf
+    Ajout des lignes :
+      <FilesMatch ".(ico|pdf|flv|jpg|jpeg|png|pngKo|gif|js|css|swf)$">
+      Header set Cache-Control "max-age=290304000, private"
+      </FilesMatch>
+    Remarque : La carte ne se met pas en ressource caché
+
+Compresser les ressources :
+  Xampp -> Apache -> config -> httpd.conf
+    Décommenter les lignes :
+      LoadModule headers_module modules/mod_deflate.so
+      LoadModule filter_module modules/mod_filter.so
+
+Retailler les images :
+  Création de nouveaux icones à la taille affichée
+
+Taille des images :
+  Compression des images : en moyenne taille des images divisé par 9
+
+Téléchargement d'images inutiles :
+  Mise en lazy loading de toutes les images et icones
+
+HTTP2 :
+  Xampp -> Apache -> config -> httpd.conf
+    Décommenter les lignes :
+      LoadModule http2_module modules/mod_http2.so
+    Ajout des lignes :
+      Protocols h2 h2c http/1.1
+    Remarque : Le protocol http2 ne fonctionne que en https
+
+Résultat :
+  Acceuil : EcoIndex C -> A
+  Toutes nos pages sont EcoIndex A sauf les pages contenant un calendrier qui crée un DOM de 400 et baisse la note à B

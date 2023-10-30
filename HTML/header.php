@@ -6,7 +6,7 @@ session_start();
 <header>
   <div class="banniere">
     <div class="logo">
-      <img src="./img/Logo_x100.png" alt="Logo du site" loading="lazy">
+      <a href="./index.php"><img src="./img/Logo_x100.png" alt="Logo du site" loading="lazy"></a>
     </div>
     <div class="title">
       <h1>Gîte Figuiès</h1>
@@ -20,7 +20,6 @@ session_start();
     }else{
       echo "
         <div class=\"login-button\">
-          <button onclick=\"window.location.href = './Login.php'\">Login</button>
         </div>";
     }
     ?>

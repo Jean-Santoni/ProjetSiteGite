@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   } else {
     echo "Erreur lors du téléchargement du fichier.";
-    exit;
   }
 
   $xml = new DOMDocument();
