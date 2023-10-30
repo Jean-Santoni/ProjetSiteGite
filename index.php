@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
   <?php
   include_once("./HTML/header.php");
   ?>
@@ -66,10 +67,8 @@
       }
       ?>
    </p>
-  <div class="indexButton" >
-      <img id="affButtonIntroDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone" loading="lazy">
-  </div>
-  <p id="introText">
+
+  <p id="introText" class="introText">
     <?php
       $xml = new DOMDocument();
      $xml->load("./DonneesAffichees.xml");
@@ -80,7 +79,7 @@
       ?>
     </p>
     <div class="indexButton" >
-     <img id="affButtonIntroUp" class="iconArrow" src="./img/btnArrowUp_x50.png" alt="Icone" loading="lazy">
+      <img id="affButtonIntroDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone" loading="lazy" onclick="toggleExpendIntro()">
     </div>
   </div>
 <div id="Service">
@@ -104,10 +103,8 @@
       <p>Télévision</p>
     </div>
   </div>
-  <div class="indexButton" >
-    <img id="affButtonServiceDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone" loading="lazy">
-  </div>
-  <div id="allServices" class="grid-container">
+
+  <div id="allServices" class=" allServices grid-container">
     <div class="grid-item">- Abris pour vélo ou VTT</div>
     <div class="grid-item">- Barbecue</div>
     <div class="grid-item">- Cuisine équipée</div>
@@ -132,7 +129,7 @@
     <div class="grid-item">- Randonnée pédestre</div>
   </div>
   <div class="indexButton" >
-    <img id="affButtonServiceUp" class="iconArrow" src="./img/btnArrowUp_x50.png" alt="Icone" loading="lazy">
+    <img id="affButtonServiceDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone" loading="lazy" onclick=" toggleExpendService()">
   </div>
 </div>
 

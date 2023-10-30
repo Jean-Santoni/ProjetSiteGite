@@ -66,11 +66,7 @@
               paragraphe.innerHTML += "{ title: '"+ event.title+"', start: '" + event.startStr+"', display: '" + event.display+"', backgroundColor: '" + event.backgroundColor+"' }, " ;
             }
           });
-          if (paragraphe.innerHTML.toString().includes('start')){
-            paragraphe.innerHTML = paragraphe.innerHTML.substring(0,paragraphe.innerHTML.length-2) + " ]";
-          }else{
-            paragraphe.innerHTML = '';
-          }
+          paragraphe.innerHTML = paragraphe.innerHTML.substring(0,paragraphe.innerHTML.length-2) + " ]";
         }
         <?php
         $xml = new DOMDocument();
@@ -95,10 +91,7 @@ if (!isset($_SESSION['user'])) {
 }
 ?>
 <h1>Page Admin</h1>
-<form action="./EnregistrementXML.php" method="post" enctype="multipart/form-data">
-  <label for="imageCarousel">Image Carousel :</label><br>
-  <input name="imageCarousel" type="file" accept="image/*" id="imageCarousel"><br><br>
-
+<form action="./EnregistrementXML.php" method="post">
   <label for="description">Description :</label><br>
   <textarea id="description" name="description" required><?php
     $xml = new DOMDocument();
