@@ -327,3 +327,18 @@ textarea {
   display: none;
 }
 
+.ListImage{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: auto;
+}
+.ListImage div{
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  flex: 0 0 calc(33.33% - 10px); /* Limite à 3 éléments par ligne avec un espacement de 10px */
+  margin-bottom: 10px; /* Espace entre les lignes */
+}

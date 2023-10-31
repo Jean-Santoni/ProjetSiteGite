@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['user'] = $username;
 
     // Rediriger vers la page de données
-    header('Location: index.php');
+    header('Location: PageAdmin.php');
     exit;
   } else {
     $error_message = "Nom d'utilisateur ou mot de passe incorrect";

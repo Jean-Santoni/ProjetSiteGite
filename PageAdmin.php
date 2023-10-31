@@ -92,59 +92,75 @@ if (!isset($_SESSION['user'])) {
 </head>
 <body class="bodyAdmin">
 <h1>Page Admin</h1>
-<?php
-function compressImage($source, $destination, $quality) {
-  // Get image info
-  $imgInfo = getimagesize($source);
-  $mime = $imgInfo['mime'];
-
-  // Create a new image from file
-  switch($mime){
-    case 'image/jpeg':
-      $image = imagecreatefromjpeg($source);
-      break;
-    case 'image/png':
-      $image = imagecreatefrompng($source);
-      break;
-    case 'image/gif':
-      $image = imagecreatefromgif($source);
-      break;
-    default:
-      $image = imagecreatefromjpeg($source);
-  }
-
-  // Save image
-  imagejpeg($image, $destination, $quality);
-
-  // Return compressed image
-  return $destination;
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST')
-{
-  if ($_FILES["imageInput"]["error"] == 0) {
-    $uploadDir = "./img/Carousel/"; // Répertoire où vous souhaitez enregistrer les images
-
-    // Le nom du fichier téléversé
-    $imageUploadPath = $uploadDir . basename($_FILES["imageInput"]["name"]);
-
-    $imageTemp = $_FILES["imageInput"]["tmp_name"];
-    $compressedImage = compressImage($imageTemp, $imageUploadPath, 75);
-
-    // Déplacez le fichier téléversé vers l'emplacement souhaité
-
-  } else {
-    echo "Erreur lors du téléchargement du fichier.";
-  }
-}
-?>
 <form id="imageUploadForm" action="./PageAdmin.php" method="post" enctype="multipart/form-data">
   <label for="imageInput">Image Carousel :</label><br>
-  <input name="imageInput" type="file" accept="image/*" id="imageInput"><br><br>
-  <input type="submit" value="Valider">
-</form>
-<form action="./EnregistrementXML.php" method="post" enctype="multipart/form-data">
+  <div class="ListImage">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#uploadButton").on("click", function () {
+          var formData = new FormData();
+          formData.append("imageInput", $("#imageInput")[0].files[0]);
 
+          $.ajax({
+            type: "POST",
+            url: "GestionImages.php", // Le fichier PHP qui gère l'upload
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+              $("#resultMessage").text(response);
+              window.location.reload();
+            },
+            error: function (error) {
+              console.log("Erreur : " + error);
+            }
+          });
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".delete-button").on("click", function () {
+          var fileName = $(this).data("file");
+          var confirmation = confirm("Voulez-vous supprimer le fichier " + fileName + " ?");
+
+          if (confirmation) {
+            $.ajax({
+              type: "POST",
+              url: "GestionImages.php",
+              data: { file: fileName },
+              success: function (response) {
+                if (response === "success") {
+                  // Actualisez la liste des images après la suppression
+                  window.location.reload();
+                } else {
+                  alert("La suppression a échoué.");
+                }
+              }
+            });
+          }
+        });
+      });
+    </script>
+    <?php
+    $directory = './img/Carousel'; // Remplacez ceci par le chemin du dossier que vous souhaitez lister.
+
+    // Utilisez scandir() pour lister les éléments du dossier.
+    $files = scandir($directory);
+
+    // Parcourez les éléments et affichez-les.
+    foreach ($files as $file) {
+      if ($file != '.' && $file != '..') {
+        echo "<div>$file <button type='button' class='delete-button' data-file='$file'>X</button></div>";
+      }
+    }
+    ?>
+  </div>
+  <input name="imageInput" type="file" accept="image/*" id="imageInput"><br><br>
+  <button id="uploadButton" type="button">Télécharger l'image</button>
+</form>
+<form action="./EnregistrementXML.php" method="post">
   <label for="description">Description :</label><br>
   <textarea id="description" name="description" required><?php
     $xml = new DOMDocument();
@@ -166,6 +182,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     }
     ?>
   </textarea><br><br>
+  <input type="submit" value="Valider">
+</form>
+<form action="./EnregistrementXML.php" method="post">
   <div id='external-events'>
     <p>
       <strong>Draggable Events</strong>

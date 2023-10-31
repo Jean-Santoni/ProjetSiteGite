@@ -5,7 +5,7 @@ var sticky = navlist.offsetTop;
 
 /* Function to stick the nav bar */
 function StickyNav() {
-  if (window.pageYOffset >= sticky) {
+  if (window.scrollY >= sticky) {
     navlist.classList.add("sticky")
   }
   else {
