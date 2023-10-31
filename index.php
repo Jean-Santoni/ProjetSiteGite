@@ -206,16 +206,16 @@
   <h2 class="sousTitre">Moyen de Paiement</h2>
   <div class="ligne">
     <div class ="iconIndex">
-      <img class ="iconIndex" src="./img/iconeCheque.png" alt="Icône">
+      <img class ="iconIndex" src="./img/iconeCheque_x50.png" alt="Icône" loading="lazy">
       <p> Chèques</p>
     </div>
     <div class ="iconIndex">
-      <img class ="iconIndex" src="./img/iconeEspece.png" alt="Icône">
+      <img class ="iconIndex" src="./img/iconeEspece_x50.png" alt="Icône" loading="lazy">
       <p> Espece</p>
     </div>
 
     <div class ="iconIndex">
-      <img class ="iconIndex" src="./img/iconeVirement.png" alt="Icône">
+      <img class ="iconIndex" src="./img/iconeVirement_x50.png" alt="Icône" loading="lazy">
       <p>Virement</p>
     </div>
 
