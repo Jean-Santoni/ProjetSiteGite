@@ -1,9 +1,13 @@
 
 
 .titrePage{
-  font-family: Calibri, serif;
-  color: crimson;
+  text-align: center;
 }
+.sousTitre{
+  font-size: x-large;
+  text-align: center;
+}
+
 .textIndex{
   text-align: center;
   margin-left: 10%;
@@ -38,9 +42,10 @@ body{
   text-align: center;
 }
 .tab{
-  width: 100%;
+  width: 80%;
   height: auto;
   text-align: center;
+  margin-left: 10%;
 }
 .tabService{
   width: 100%;
@@ -108,6 +113,9 @@ body{
   align-items: center;
   text-align: center;
   font-weight: bold;
+}
+.ligne p {
+  text-align: center;
 }
 
 footer{

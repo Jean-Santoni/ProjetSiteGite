@@ -15,7 +15,7 @@
   <h1 class=" titrePage" >Pages des tarifs</h1>
 
   <div>
-    <h2> Les différents types de tarifs </h2>
+    <h2 class="sousTitre"> Les différents types de tarifs </h2>
     <table class="tab">
       <tr>
       <th></th>
@@ -33,17 +33,21 @@
       <td>650 €</td>
      </tr>
      <tr>
-      <td>Bonus 1</td>
+      <td>Animaux</td>
       <td colspan="2" class="center">1000 €</td>
      </tr>
       <tr>
-        <td>Bonus 2</td>
+        <td>Ménage</td>
+        <td colspan="2" class="center">560 €</td>
+      </tr>
+      <tr>
+        <td>Location de linge</td>
         <td colspan="2" class="center">560 €</td>
       </tr>
     </table>
   </div>
   </br>
-    <h2> Capacités </h2>
+    <h2 class="sousTitre"> Capacités </h2>
     <div  class="ligne">
       <p> Personnes : 4</p>
       <p> Chambre : 2</p>
@@ -51,7 +55,7 @@
 
     </div>
     </br>
-    <h1 class=" titrePage" >Moyen de Paiement</h1>
+    <h2 class="sousTitre">Moyen de Paiement</h2>
     <div class="ligne">
       <div class ="iconIndex">
         <img class ="iconIndex" src="./img/iconeCheque.png" alt="Icône">

@@ -1,15 +1,27 @@
 reservé rouge , non disponible gris
-cash controle header 
-compresser 
+cash controle header
+compresser
 et derniere
-Wamp http 2 etc 
+Wamp http 2 etc
 lazy loading carrouseel charge les images au bon moment <!>
-gerer qualité images 
+gerer qualité images
 faire url spécial page login
 temps carrousel
 alignement service et agrandir icone voiture
 revoir icone facebook.
 revoir les bordures footer
 armoniser couleurs avec le logo
-VOIR SITE DE GITES 
+VOIR SITE DE GITES
 faire fichier pour eco conception
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+PART 2
+ Scenario
+page d'acceuil >green it  cache etc
+
+3 photos du gites
+
+verif tarif moyenne saison  1.18 g
+nombre de chambre
+verif position 1.46g
+calendrier 1.42 g
+contacter
