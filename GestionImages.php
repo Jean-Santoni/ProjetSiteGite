@@ -1,4 +1,16 @@
 <?php
+
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
+  $directory = './img/Carousel'; // Remplacez ceci par le chemin du dossier que vous souhaitez lister.
+
+  $files = scandir($directory);
+
+  foreach ($files as $file) {
+    if ($file != '.' && $file != '..') {
+      echo "<div>$file <button type='button' class='delete-button' data-file='$file'>X</button></div>";
+    }
+  }
+}
 function compressImage($source, $destination, $quality) {
   $imgInfo = getimagesize($source);
   $mime = $imgInfo['mime'];

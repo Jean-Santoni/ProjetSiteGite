@@ -14,6 +14,8 @@ if (!isset($_SESSION['user'])) {
 
   <link rel="stylesheet" href="css/main.css">
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./js/pageAdminScript.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var Calendar = FullCalendar.Calendar;
@@ -94,55 +96,7 @@ if (!isset($_SESSION['user'])) {
 <h1>Page Admin</h1>
 <form id="imageUploadForm" action="./PageAdmin.php" method="post" enctype="multipart/form-data">
   <label for="imageInput">Image Carousel :</label><br>
-  <div class="ListImage">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#uploadButton").on("click", function () {
-          var formData = new FormData();
-          formData.append("imageInput", $("#imageInput")[0].files[0]);
-
-          $.ajax({
-            type: "POST",
-            url: "GestionImages.php", // Le fichier PHP qui gère l'upload
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function (response) {
-              $("#resultMessage").text(response);
-              window.location.reload();
-            },
-            error: function (error) {
-              console.log("Erreur : " + error);
-            }
-          });
-        });
-      });
-    </script>
-    <script>
-      $(document).ready(function () {
-        $(".delete-button").on("click", function () {
-          var fileName = $(this).data("file");
-          var confirmation = confirm("Voulez-vous supprimer le fichier " + fileName + " ?");
-
-          if (confirmation) {
-            $.ajax({
-              type: "POST",
-              url: "GestionImages.php",
-              data: { file: fileName },
-              success: function (response) {
-                if (response === "success") {
-                  // Actualisez la liste des images après la suppression
-                  window.location.reload();
-                } else {
-                  alert("La suppression a échoué.");
-                }
-              }
-            });
-          }
-        });
-      });
-    </script>
+  <div class="ListImage" id="ListImage">
     <?php
     $directory = './img/Carousel'; // Remplacez ceci par le chemin du dossier que vous souhaitez lister.
 
