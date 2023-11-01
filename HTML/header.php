@@ -24,19 +24,26 @@ session_start();
     }
     ?>
   </div>
-  <nav id="navlist">
-    <ul>
-      <li><a href="./index.php">Accueil</a></li>
-      <li><a href="./index.php#Service">Services</a></li>
-      <li><a href="./PageCalendrier.php">Calendrier</a></li>
-      <li><a href="./index.php#Tarifs">Tarifs</a></li>
-      <?php
-      if(isset($_SESSION['user'])){
-        echo "<li><a href=\"./PageAdmin.php\">Admin</a></li>";
-      }
-      ?>
-    </ul>
-  </nav>
+  <div class="navbar" id="navbar">
+    <div class="burger-icon" id="burgerlist" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav id="navlist">
+      <ul>
+        <li><a href="./index.php">Accueil</a></li>
+        <li><a href="./index.php#Service">Services</a></li>
+        <li><a href="./index.php#Tarifs">Tarifs</a></li>
+        <li><a href="./PageCalendrier.php">Calendrier</a></li>
+        <?php
+        if(isset($_SESSION['user'])){
+          echo "<li><a href=\"./PageAdmin.php\">Admin</a></li>";
+        }
+        ?>
+      </ul>
+    </nav>
+  </div>
   <script src="./js/menuSticky.js"></script>
 </header>
 </html>

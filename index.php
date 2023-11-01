@@ -27,8 +27,8 @@
     // Parcourez les éléments et affichez-les.
     foreach ($files as $file) {
       if ($file != '.' && $file != '..') {
-        echo "<div class=\"custom-image fade\">
-            <img class=\"slide-img\" src=\"img/Carousel/$file\"  loading=\"lazy\">
+        echo "<div class='custom-image fade'>
+            <img class='slide-img' src='img/Carousel/$file'  loading='lazy'>
             </div>";
       }
     }
