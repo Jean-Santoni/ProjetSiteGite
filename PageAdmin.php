@@ -76,6 +76,29 @@ if (!isset($_SESSION['user'])) {
             }
           });
           paragraphe.innerHTML = paragraphe.innerHTML.substring(0,paragraphe.innerHTML.length-2) + " ]";
+        },
+        eventAdd: function(info) {
+          let newEventDate = info.event.start.toDateString();
+          var paragraphe = document.getElementById("EventsCalendar");
+          paragraphe.innerHTML = ", events: [ ";
+          this.getEvents().forEach(function (event) {
+            let oldEventDate = event.start.toDateString();
+            if (oldEventDate === newEventDate) {
+              if(info.event.id === "Supprimer"){
+                event.remove();
+              }
+              else if(event.id !== info.event.id){
+                event.remove();
+              }
+              else{
+                paragraphe.innerHTML += "{ title: '"+ event.title+"', start: '" + event.startStr+"', end: '" + event.endStr+"', display: '" + event.display+"', backgroundColor: '" + event.backgroundColor+"' }, " ;
+              }
+            }
+            else{
+              paragraphe.innerHTML += "{ title: '"+ event.title+"', start: '" + event.startStr+"', end: '" + event.endStr+"', display: '" + event.display+"', backgroundColor: '" + event.backgroundColor+"' }, " ;
+            }
+          });
+          paragraphe.innerHTML = paragraphe.innerHTML.substring(0,paragraphe.innerHTML.length-2) + " ]";
         }
         <?php
         $xml = new DOMDocument();
@@ -86,6 +109,36 @@ if (!isset($_SESSION['user'])) {
         }
         ?>
       });
+
+      $('#addEventButton').click(function() {
+        var startDate = $('#startDate').val();
+        var endDate = $('#endDate').val();
+        var eventStatus = $('#eventStatus').val();
+
+        let dateFin = new Date(endDate)
+        dateFin.setDate(dateFin.getDate() +1);
+
+        // Créez un nouvel événement pour le calendrier avec le titre basé sur le statut sélectionné
+        var eventTitle = eventStatus === 'non-disponible' ? 'Non disponible' : 'Réservé';
+
+        // Créez un nouvel événement pour le calendrier
+        var newEvent = {
+          title: eventTitle,
+          id: eventTitle,
+          start: startDate,
+          end: dateFin.toISOString().split('T')[0],
+          display: 'background',
+          backgroundColor: colors[eventTitle]
+        };
+
+        // Ajoutez l'événement au calendrier FullCalendar
+        calendar.addEvent(newEvent);
+
+        // Réinitialisez les champs de saisie de date
+        $('#startDate').val('');
+        $('#endDate').val('');
+      });
+
       calendar.render();
     });
   </script>
@@ -138,6 +191,21 @@ if (!isset($_SESSION['user'])) {
   </textarea><br><br>
   <input type="submit" value="Valider">
 </form>
+<form id="eventForm">
+  <label for="startDate">Date de début :</label>
+  <input type="date" id="startDate" name="startDate">
+
+  <label for="endDate">Date de fin :</label>
+  <input type="date" id="endDate" name="endDate">
+
+  <label for="eventStatus">Statut :</label>
+  <select id="eventStatus" name="eventStatus">
+    <option value="non-disponible">Non disponible</option>
+    <option value="reserve">Réservé</option>
+  </select>
+
+  <input type="button" value="Ajouter Événement" id="addEventButton">
+</form>
 <form action="./EnregistrementXML.php" method="post">
   <div id='external-events'>
     <p>
@@ -154,6 +222,8 @@ if (!isset($_SESSION['user'])) {
       <div class='fc-event-main'>Supprimer</div>
     </div>
   </div>
+
+
 
   <div id='calendar-container'>
     <div id='calendar'></div>
