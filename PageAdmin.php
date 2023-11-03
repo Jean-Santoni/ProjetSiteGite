@@ -189,7 +189,8 @@ if (!isset($_SESSION['user'])) {
     }
     ?>
   </textarea><br><br>
-
+<div class="lignes">
+  <div>
   <label for="nombrePersonne">Nombre de personnes :</label><br>
   <input type="number" id="nombrePersonne" name="nombrePersonne" value='<?php
   $xml = new DOMDocument();
@@ -199,7 +200,8 @@ if (!isset($_SESSION['user'])) {
     echo $element->nodeValue;
   }
   ?>' required><br><br>
-
+  </div>
+  <div>
   <label for="nombreChambre">Nombre de chambre :</label><br>
   <input type="number" id="nombreChambre" name="nombreChambre" value='<?php
   $xml = new DOMDocument();
@@ -209,6 +211,8 @@ if (!isset($_SESSION['user'])) {
     echo $element->nodeValue;
   }
   ?>' required><br><br>
+  </div>
+  <div>
   <label for="nombrePersonneMax">Nombre de personnes maximum :</label><br>
   <input type="number" id="nombrePersonneMax" name="nombrePersonneMax" value='<?php
   $xml = new DOMDocument();
@@ -218,6 +222,8 @@ if (!isset($_SESSION['user'])) {
     echo $element->nodeValue;
   }
   ?>' required><br><br>
+  </div>
+</div>
   <input type="submit" value="Valider">
 </form>
 <form id="eventForm">

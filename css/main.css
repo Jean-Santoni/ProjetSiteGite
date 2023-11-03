@@ -119,6 +119,9 @@ body{
   text-align: center;
   font-weight: bold;
 }
+.lignes input {
+  width: 25px;
+}
 .lignes p {
   text-align: center;
 }
