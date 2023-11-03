@@ -85,7 +85,7 @@
   <div id="Service"></div>
 <br>
 <div>
-  <h1> Equipements et Services </h1>
+  <h1 class="textIndex"> Equipements et Services </h1>
   <div class="ligne">
     <div class ="iconIndex">
     <img class ="iconIndex" src="./img/iconeChien_x50.png" alt="Icône" loading="lazy">
@@ -196,11 +196,10 @@
   </div>
   </br>
   <h2 class="sousTitre"> Capacités </h2>
-  <div  class="ligne">
+  <div  class="lignes">
     <p> Personnes : 4</p>
     <p> Chambre : 2</p>
     <p> Personnes(Maximum) :4</p>
-
   </div>
   </br>
   <h2 class="sousTitre">Moyen de Paiement</h2>
@@ -211,9 +210,8 @@
     </div>
     <div class ="iconIndex">
       <img class ="iconIndex" src="./img/iconeEspece_x50.png" alt="Icône" loading="lazy">
-      <p> Espece</p>
+      <p> Espèce</p>
     </div>
-
     <div class ="iconIndex">
       <img class ="iconIndex" src="./img/iconeVirement_x50.png" alt="Icône" loading="lazy">
       <p>Virement</p>

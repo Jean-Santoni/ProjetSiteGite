@@ -11,7 +11,7 @@ if (!isset($_SESSION['user'])) {
   <meta charset="UTF-8">
   <title>Gîte Figuiès Admin</title>
   <link rel="icon" href="./img/Logo_x32.png" type="image/png">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/main.css">
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
