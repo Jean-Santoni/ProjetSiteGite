@@ -128,25 +128,25 @@
         <td>Terrasse</td>
         <td>Animaux acceptés (Payant)</td>
       </tr>
-<!--      <tr>-->
-<!--        <td>Location de linge (Payante)</td>-->
-<!--        <td>Ménage (Payant)</td>-->
-<!--        <td>Climatisation</td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td>Cheminée</td>-->
-<!--        <td>Lave vaisselle</td>-->
-<!--        <td>Sèche cheveux</td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td>Télévision</td>-->
-<!--        <td>Escalade à 5km</td>-->
-<!--        <td>VTT - Vélo</td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td>Musée à 3km</td>-->
-<!--        <td>Randonnée pédestre</td>-->
-<!--      </tr>-->
+      <tr>
+        <td>Location de linge (Payante)</td>
+        <td>Ménage (Payant)</td>
+        <td>Climatisation</td>
+      </tr>
+      <tr>
+        <td>Cheminée</td>
+        <td>Lave vaisselle</td>
+        <td>Sèche cheveux</td>
+      </tr>
+      <tr>
+        <td>Télévision</td>
+        <td>Escalade à 5km</td>
+        <td>VTT - Vélo</td>
+      </tr>
+      <tr>
+        <td>Musée à 3km</td>
+        <td>Randonnée pédestre</td>
+      </tr>
 
     </table>
 
@@ -172,25 +172,74 @@
       </tr>
       <tr>
         <td>Nuit</td>
-        <td>85 €</td>
-        <td>110 €</td>
+        <td><?php
+          $xml = new DOMDocument();
+          $xml->load("./DonneesAffichees.xml");
+          $elements = $xml->getElementsByTagName('PNM');
+          foreach ($elements as $element) {
+            echo nl2br($element->nodeValue);
+          }
+          ?> €</td>
+        <td><?php
+          $xml = new DOMDocument();
+          $xml->load("./DonneesAffichees.xml");
+          $elements = $xml->getElementsByTagName('PNH');
+          foreach ($elements as $element) {
+            echo nl2br($element->nodeValue);
+          }
+          ?> €</td>
       </tr>
       <tr>
         <td>Semaine</td>
-        <td>550 €</td>
-        <td>650 €</td>
+        <td><?php
+          $xml = new DOMDocument();
+          $xml->load("./DonneesAffichees.xml");
+          $elements = $xml->getElementsByTagName('PSM');
+          foreach ($elements as $element) {
+            echo nl2br($element->nodeValue);
+          }
+          ?> €</td>
+        <td><?php
+          $xml = new DOMDocument();
+          $xml->load("./DonneesAffichees.xml");
+          $elements = $xml->getElementsByTagName('PSH');
+          foreach ($elements as $element) {
+            echo nl2br($element->nodeValue);
+          }
+          ?> €</td>
       </tr>
       <tr>
         <td>Animaux</td>
-        <td colspan="2" class="center">1000 €</td>
+        <td colspan="2" class="center"><?php
+          $xml = new DOMDocument();
+          $xml->load("./DonneesAffichees.xml");
+          $elements = $xml->getElementsByTagName('PXA');
+          foreach ($elements as $element) {
+            echo nl2br($element->nodeValue);
+          }
+          ?> €</td>
       </tr>
       <tr>
         <td>Ménage</td>
-        <td colspan="2" class="center">560 €</td>
+        <td colspan="2" class="center"><?php
+          $xml = new DOMDocument();
+          $xml->load("./DonneesAffichees.xml");
+          $elements = $xml->getElementsByTagName('PXM');
+          foreach ($elements as $element) {
+            echo nl2br($element->nodeValue);
+          }
+          ?> €</td>
       </tr>
       <tr>
         <td>Location de linge</td>
-        <td colspan="2" class="center">560 €</td>
+        <td colspan="2" class="center"><?php
+          $xml = new DOMDocument();
+          $xml->load("./DonneesAffichees.xml");
+          $elements = $xml->getElementsByTagName('PXL');
+          foreach ($elements as $element) {
+            echo nl2br($element->nodeValue);
+          }
+          ?> €</td>
       </tr>
     </table>
   </div>

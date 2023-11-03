@@ -189,6 +189,90 @@ if (!isset($_SESSION['user'])) {
     }
     ?>
   </textarea><br><br>
+<!--  ////////////////////////////////////////////////TABLEAUX//////////////////////////////////////////////////////////////////-->
+  <div class="ligne">
+  <div>
+    <label for="prixNuitMoy">Prix nuit moyenne saison :</label><br>
+    <input type="number" id="prixNuitMoy" name="prixNuitMoy" value='<?php
+    $xml = new DOMDocument();
+    $xml->load("./DonneesAffichees.xml");
+    $elements = $xml->getElementsByTagName('PNM');
+    foreach ($elements as $element) {
+      echo $element->nodeValue;
+    }
+    ?>' required><br><br>
+  </div>
+  <div>
+    <label for="prixNuitHaut">Prix nuit haute saison :</label><br>
+    <input type="number" id="prixNuitHaut" name="prixNuitHaut" value='<?php
+    $xml = new DOMDocument();
+    $xml->load("./DonneesAffichees.xml");
+    $elements = $xml->getElementsByTagName('PNH');
+    foreach ($elements as $element) {
+      echo $element->nodeValue;
+    }
+    ?>' required><br><br>
+  </div>
+  <div>
+    <label for="prixSemMoy">Prix semaine moyennes saison :</label><br>
+    <input type="number" id="prixSemMoy" name="prixSemMoy" value='<?php
+    $xml = new DOMDocument();
+    $xml->load("./DonneesAffichees.xml");
+    $elements = $xml->getElementsByTagName('PSM');
+    foreach ($elements as $element) {
+      echo $element->nodeValue;
+    }
+    ?>' required><br><br>
+  </div>
+  <div>
+    <label for="prixSemHaut">Prix semaine haute saison :</label><br>
+    <input type="number" id="prixSemHaut" name="prixSemHaut" value='<?php
+    $xml = new DOMDocument();
+    $xml->load("./DonneesAffichees.xml");
+    $elements = $xml->getElementsByTagName('PSH');
+    foreach ($elements as $element) {
+      echo $element->nodeValue;
+    }
+    ?>' required><br><br>
+  </div>
+  </div>
+
+  <div class="lignes">
+  <div>
+    <label for="prixAnimaux">Prix animaux :</label><br>
+    <input type="number" id="prixAnimaux" name="prixAnimaux" value='<?php
+    $xml = new DOMDocument();
+    $xml->load("./DonneesAffichees.xml");
+    $elements = $xml->getElementsByTagName('PXA');
+    foreach ($elements as $element) {
+      echo $element->nodeValue;
+    }
+    ?>' required><br><br>
+  </div>
+  <div>
+    <label for="prixMenage">Prix ménage :</label><br>
+    <input type="number" id="prixMenage" name="prixMenage" value='<?php
+    $xml = new DOMDocument();
+    $xml->load("./DonneesAffichees.xml");
+    $elements = $xml->getElementsByTagName('PXM');
+    foreach ($elements as $element) {
+      echo $element->nodeValue;
+    }
+    ?>' required><br><br>
+  </div>
+  <div>
+    <label for="prixLocation">Prix location de linge :</label><br>
+    <input type="number" id="prixLocation" name="prixLocation" value='<?php
+    $xml = new DOMDocument();
+    $xml->load("./DonneesAffichees.xml");
+    $elements = $xml->getElementsByTagName('PXL');
+    foreach ($elements as $element) {
+      echo $element->nodeValue;
+    }
+    ?>' required><br><br>
+  </div>
+  </div>
+  <!--  //////////////////////////////////////////////SERVICE////////////////////////////////////////////////////////////////////-->
 <div class="lignes">
   <div>
   <label for="nombrePersonne">Nombre de personnes :</label><br>
