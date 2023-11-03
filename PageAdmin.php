@@ -189,6 +189,35 @@ if (!isset($_SESSION['user'])) {
     }
     ?>
   </textarea><br><br>
+
+  <label for="nombrePersonne">Nombre de personnes :</label><br>
+  <input type="number" id="nombrePersonne" name="nombrePersonne" value='<?php
+  $xml = new DOMDocument();
+  $xml->load("./DonneesAffichees.xml");
+  $elements = $xml->getElementsByTagName('NBPERS');
+  foreach ($elements as $element) {
+    echo $element->nodeValue;
+  }
+  ?>' required><br><br>
+
+  <label for="nombreChambre">Nombre de chambre :</label><br>
+  <input type="number" id="nombreChambre" name="nombreChambre" value='<?php
+  $xml = new DOMDocument();
+  $xml->load("./DonneesAffichees.xml");
+  $elements = $xml->getElementsByTagName('NBCHAMB');
+  foreach ($elements as $element) {
+    echo $element->nodeValue;
+  }
+  ?>' required><br><br>
+  <label for="nombrePersonneMax">Nombre de personnes maximum :</label><br>
+  <input type="number" id="nombrePersonneMax" name="nombrePersonneMax" value='<?php
+  $xml = new DOMDocument();
+  $xml->load("./DonneesAffichees.xml");
+  $elements = $xml->getElementsByTagName('NBPERSMAX');
+  foreach ($elements as $element) {
+    echo $element->nodeValue;
+  }
+  ?>' required><br><br>
   <input type="submit" value="Valider">
 </form>
 <form id="eventForm">

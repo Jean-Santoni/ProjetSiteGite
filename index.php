@@ -128,25 +128,25 @@
         <td>Terrasse</td>
         <td>Animaux acceptés (Payant)</td>
       </tr>
-      <tr>
-        <td>Location de linge (Payante)</td>
-        <td>Ménage (Payant)</td>
-        <td>Climatisation</td>
-      </tr>
-      <tr>
-        <td>Cheminée</td>
-        <td>Lave vaisselle</td>
-        <td>Sèche cheveux</td>
-      </tr>
-      <tr>
-        <td>Télévision</td>
-        <td>Escalade à 5km</td>
-        <td>VTT - Vélo</td>
-      </tr>
-      <tr>
-        <td>Musée à 3km</td>
-        <td>Randonnée pédestre</td>
-      </tr>
+<!--      <tr>-->
+<!--        <td>Location de linge (Payante)</td>-->
+<!--        <td>Ménage (Payant)</td>-->
+<!--        <td>Climatisation</td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>Cheminée</td>-->
+<!--        <td>Lave vaisselle</td>-->
+<!--        <td>Sèche cheveux</td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>Télévision</td>-->
+<!--        <td>Escalade à 5km</td>-->
+<!--        <td>VTT - Vélo</td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>Musée à 3km</td>-->
+<!--        <td>Randonnée pédestre</td>-->
+<!--      </tr>-->
 
     </table>
 
@@ -197,9 +197,39 @@
   </br>
   <h2 class="sousTitre"> Capacités </h2>
   <div  class="lignes">
-    <p> Personnes : 4</p>
-    <p> Chambre : 2</p>
-    <p> Personnes(Maximum) :4</p>
+    <div>
+      <p>Personnes : </p>
+      <p><?php
+        $xml = new DOMDocument();
+        $xml->load("./DonneesAffichees.xml");
+        $elements = $xml->getElementsByTagName('NBPERS');
+        foreach ($elements as $element) {
+          echo nl2br($element->nodeValue);
+        }
+        ?></p>
+    </div>
+    <div>
+      <p>Chambres : </p>
+      <p><?php
+        $xml = new DOMDocument();
+        $xml->load("./DonneesAffichees.xml");
+        $elements = $xml->getElementsByTagName('NBCHAMB');
+        foreach ($elements as $element) {
+          echo nl2br($element->nodeValue);
+        }
+        ?></p>
+    </div>
+    <div>
+      <p>Personnes (Maximum) : </p>
+      <p><?php
+        $xml = new DOMDocument();
+        $xml->load("./DonneesAffichees.xml");
+        $elements = $xml->getElementsByTagName('NBPERSMAX');
+        foreach ($elements as $element) {
+          echo nl2br($element->nodeValue);
+        }
+        ?></p>
+    </div>
   </div>
   </br>
   <h2 class="sousTitre">Moyen de Paiement</h2>
@@ -218,7 +248,6 @@
     </div>
 
   </div>
-  </br></br>  </br></br>  </br></br>
 
 <?php
 include_once ("./HTML/footer.html");
