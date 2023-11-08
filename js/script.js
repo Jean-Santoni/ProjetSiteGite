@@ -1,6 +1,5 @@
 let slideIndex = 0;
 const TEMPS_SLIDE = 8000;
-/*AfficherSlide(slideIndex);*/
 AutoSlide();
 let timer = setInterval(AutoSlide, TEMPS_SLIDE);
 let introText = document.getElementById('introText');

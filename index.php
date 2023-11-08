@@ -19,12 +19,12 @@
   ?>
   <div class="carrousel">
     <?php
-    $directory = './img/Carousel'; // Remplacez ceci par le chemin du dossier que vous souhaitez lister.
+    $directory = './img/Carousel';
 
-    // Utilisez scandir() pour lister les éléments du dossier.
+
     $files = scandir($directory);
 
-    // Parcourez les éléments et affichez-les.
+
     foreach ($files as $file) {
       if ($file != '.' && $file != '..') {
         echo "<div class='custom-image fade'>
@@ -39,13 +39,10 @@
 <br>
 <div class="slide-dot">
   <?php
-  $directory = './img/Carousel'; // Remplacez ceci par le chemin du dossier que vous souhaitez lister.
-
-  // Utilisez scandir() pour lister les éléments du dossier.
+  $directory = './img/Carousel';
   $files = scandir($directory);
   $fileCount = 0;
 
-  // Parcourez les éléments et affichez-les.
   foreach ($files as $file) {
     if ($file != '.' && $file != '..') {
       $fileCount ++;

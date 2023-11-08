@@ -1,12 +1,12 @@
 
 $(document).ready(function () {
-  // Chargez la liste des images via AJAX
+
   loadImageList();
 
   function loadImageList() {
     $.ajax({
       type: "GET",
-      url: "GestionImages.php", // Le fichier PHP qui renvoie la liste des images
+      url: "GestionImages.php",
       success: function (data) {
         $("#ListImage").html(data);
       }
@@ -23,7 +23,6 @@ $(document).ready(function () {
         data: { file: fileName },
         success: function (response) {
           if (response === "success") {
-            // Actualisez la liste des images après la suppression
             loadImageList();
           } else {
             alert("La suppression a échoué.");
@@ -38,8 +37,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "GestionImages.php", // Le fichier PHP qui gère l'upload
-      data: formData,
+      url: "GestionImages.php",
       contentType: false,
       processData: false,
       success: function (response) {

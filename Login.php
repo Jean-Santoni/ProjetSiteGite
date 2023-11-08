@@ -6,7 +6,7 @@
   <link rel="icon" href="./img/Logo_x32.png" type="image/png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="././css/Login.css"> <!-- Vous pouvez ajouter un fichier CSS externe pour le style -->
+  <link rel="stylesheet" href="././css/Login.css">
 </head>
 <body>
 <var></var>
@@ -28,13 +28,11 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Récupérer les données du formulaire
+
   $username = $_POST['username'];
-  //$password = md5($_POST['password']);
   $password = $_POST['password'];
 
-  // Vérifier les informations d'authentification dans la base de données
-  // (Vous devez vous connecter à votre base de données ici)
+
   $conn = new PDO("mysql:host=localhost;dbname=gitefiguies", 'root', '');
   $req = "SELECT * FROM utilisateur WHERE NomUtilisateur = :pLogin;";
 
@@ -49,10 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hashed_password = $row['MotDePasse'];
     $crypted_password = crypt($password, $hashed_password);
     if (hash_equals($hashed_password, $crypted_password)){
-      // Stocker l'identifiant de l'utilisateur dans une session
       $_SESSION['user'] = $username;
 
-      // Rediriger vers la page de données
       header('Location: PageAdmin.php');
       exit;
     }

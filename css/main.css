@@ -1,5 +1,4 @@
 
-
 .titrePage{
   text-align: center;
 }
@@ -144,7 +143,6 @@ footer{
   width: auto;
   margin: 10px;
 }
-
 .icon{
   display: flex;
   width: 40px;
@@ -159,9 +157,7 @@ footer{
   flex-direction: column;
   margin-bottom: 20px;
   text-align: center;
-
 }
-
 /* Styles pour l'en-tête */
 .banniere {
   display: flex;
@@ -320,7 +316,7 @@ nav {
 ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap; /* Permet d'afficher les éléments sur deux colonnes */
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px 0;
   margin: 0;

@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-  background-color: #FFA500; /* Orange */
+  background-color: #FFA500;
   padding: 20px;
   border-radius: 5px;
   text-align: center;
@@ -20,7 +20,6 @@ h2 {
 }
 
 .form-group {
-  /*margin-bottom: 20px;*/
   margin: 10px;
   justify-content: center;
 }
@@ -33,7 +32,6 @@ label {
 
 input[type="text"],
 input[type="password"] {
-  /*width: 100%;*/
   padding: 10px;
   margin: 5px 5px 10px;
   border: none;
@@ -42,7 +40,7 @@ input[type="password"] {
 
 button {
   background-color: black;
-  color: #FFA500; /* Orange */
+  color: #FFA500;
   padding: 10px 20px;
   border: none;
   border-radius: 3px;
@@ -53,5 +51,5 @@ button {
 
 button:hover {
   background-color: #333;
-  color: #FFA500; /* Orange */
+  color: #FFA500;
 }
