@@ -151,12 +151,9 @@ if (!isset($_SESSION['user'])) {
   <label for="imageInput">Image Carousel :</label><br>
   <div class="ListImage" id="ListImage">
     <?php
-    $directory = './img/Carousel'; // Remplacez ceci par le chemin du dossier que vous souhaitez lister.
-
-    // Utilisez scandir() pour lister les éléments du dossier.
+    $directory = './img/Carousel';
     $files = scandir($directory);
 
-    // Parcourez les éléments et affichez-les.
     foreach ($files as $file) {
       if ($file != '.' && $file != '..') {
         echo "<div>$file <button type='button' class='delete-button' data-file='$file'>X</button></div>";
@@ -177,8 +174,8 @@ if (!isset($_SESSION['user'])) {
       echo preg_replace('<br />', '', $element->nodeValue);
     }
     ?>
-  </textarea><br><br>
-
+  </textarea>
+  <br><br>
   <label for="descriptionDetail">Description détaillée :</label><br>
   <textarea id="descriptionDetail" name="descDetail" required><?php
     $xml = new DOMDocument();
@@ -188,8 +185,8 @@ if (!isset($_SESSION['user'])) {
       echo $element->nodeValue;
     }
     ?>
-  </textarea><br><br>
-<!--  ////////////////////////////////////////////////TABLEAUX//////////////////////////////////////////////////////////////////-->
+  </textarea>
+  <br><br>
   <div class="ligne">
   <div>
     <label for="prixNuitMoy">Prix nuit moyenne saison :</label><br>
@@ -272,7 +269,6 @@ if (!isset($_SESSION['user'])) {
     ?>' required><br><br>
   </div>
   </div>
-  <!--  //////////////////////////////////////////////SERVICE////////////////////////////////////////////////////////////////////-->
 <div class="lignes">
   <div>
   <label for="nombrePersonne">Nombre de personnes :</label><br>

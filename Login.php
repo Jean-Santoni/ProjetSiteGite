@@ -28,10 +28,9 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
   $username = $_POST['username'];
+  //$password = md5($_POST['password']); //Ancienne méthode de hashage
   $password = $_POST['password'];
-
 
   $conn = new PDO("mysql:host=localhost;dbname=gitefiguies", 'root', '');
   $req = "SELECT * FROM utilisateur WHERE NomUtilisateur = :pLogin;";
@@ -53,9 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit;
     }
   }
-  $error_message = "Nom d'utilisateur ou mot de passe incorrect";
   echo "<script>alert('Indentifiant ou mot de passe incorrect ')</script>";
 }
-
 ?>
 

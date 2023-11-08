@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
-  $directory = './img/Carousel'; // Remplacez ceci par le chemin du dossier que vous souhaitez lister.
+  $directory = './img/Carousel';
 
   $files = scandir($directory);
 
@@ -39,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $fileToDelete = $_POST["file"];
     $directory = './img/Carousel/';
 
-    // Assurez-vous que le nom du fichier est sécurisé pour éviter les attaques
     $filePath = $directory . $fileToDelete;
 
     if (file_exists($filePath) && unlink($filePath)) {
@@ -50,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     exit;
   }
   if ($_FILES["imageInput"]["error"] == 0) {
-    $uploadDir = "./img/Carousel/"; // Répertoire où vous souhaitez enregistrer les images
+    $uploadDir = "./img/Carousel/";
     $imageUploadPath = $uploadDir . basename($_FILES["imageInput"]["name"]);
     $imageTemp = $_FILES["imageInput"]["tmp_name"];
     $compressedImage = compressImage($imageTemp, $imageUploadPath, 75);

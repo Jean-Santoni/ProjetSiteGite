@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="fr">
 
 <head>
   <meta charset="utf-8">
@@ -20,15 +20,12 @@
   <div class="carrousel">
     <?php
     $directory = './img/Carousel';
-
-
     $files = scandir($directory);
-
 
     foreach ($files as $file) {
       if ($file != '.' && $file != '..') {
         echo "<div class='custom-image fade'>
-            <img class='slide-img' src='img/Carousel/$file'  loading='lazy'>
+            <img class='slide-img' src='img/Carousel/$file' loading='lazy'>
             </div>";
       }
     }

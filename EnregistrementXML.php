@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $root->appendChild($xml->createElement("PXM", $prixMenage));
       $root->appendChild($xml->createElement("PXL", $prixLocation));
     } catch (DOMException $e) {
-      echo "Ca marche pas";
+      echo "<script>alert('Indentifiant ou mot de passe incorrect ')</script>";
       exit;
     }
   }
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
       $root->appendChild($xml->createElement("CALENDAR", $eventCalendar));
     } catch (DOMException $e) {
-      echo "Ca marche pas";
+      echo "<script>alert('Indentifiant ou mot de passe incorrect ')</script>";
       exit;
     }
   }
