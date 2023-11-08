@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
 <?php
 include_once("./HTML/header.php");
 if (!isset($_SESSION['user'])) {
@@ -187,10 +187,10 @@ if (!isset($_SESSION['user'])) {
     ?>
   </textarea>
   <br><br>
-  <div class="ligne">
+  <div class="lignesFlex">
   <div>
-    <label for="prixNuitMoy">Prix nuit moyenne saison :</label><br>
-    <input type="number" id="prixNuitMoy" name="prixNuitMoy" value='<?php
+    <label for="prixNuitMoy">Prix nuitée moyenne saison :</label><br>
+    <input type="number" id="prixNuitMoy" name="prixNuitMoy"  value='<?php
     $xml = new DOMDocument();
     $xml->load("./DonneesAffichees.xml");
     $elements = $xml->getElementsByTagName('PNM');
@@ -200,7 +200,7 @@ if (!isset($_SESSION['user'])) {
     ?>' required><br><br>
   </div>
   <div>
-    <label for="prixNuitHaut">Prix nuit haute saison :</label><br>
+    <label for="prixNuitHaut">Prix nuitée haute saison :</label><br>
     <input type="number" id="prixNuitHaut" name="prixNuitHaut" value='<?php
     $xml = new DOMDocument();
     $xml->load("./DonneesAffichees.xml");
@@ -233,8 +233,8 @@ if (!isset($_SESSION['user'])) {
     ?>' required><br><br>
   </div>
   </div>
-
-  <div class="lignes">
+  <br><br>
+  <div class="lignesGrid">
   <div>
     <label for="prixAnimaux">Prix animaux :</label><br>
     <input type="number" id="prixAnimaux" name="prixAnimaux" value='<?php
@@ -269,7 +269,8 @@ if (!isset($_SESSION['user'])) {
     ?>' required><br><br>
   </div>
   </div>
-<div class="lignes">
+  <br><br>
+<div class="lignesGrid">
   <div>
   <label for="nombrePersonne">Nombre de personnes :</label><br>
   <input type="number" id="nombrePersonne" name="nombrePersonne" value='<?php
@@ -304,8 +305,11 @@ if (!isset($_SESSION['user'])) {
   ?>' required><br><br>
   </div>
 </div>
+  <br><br>
   <input type="submit" value="Valider">
 </form>
+<br>
+
 <form id="eventForm">
   <label for="startDate">Date de début :</label>
   <input type="date" id="startDate" name="startDate">

@@ -102,7 +102,7 @@ body{
   padding: 15px;
   text-align: center;
 }
-.lignes{
+.lignesGrid{
   display:grid;
   grid-template-rows: repeat(4,auto);
   grid-template-columns: repeat(3, 1fr);
@@ -110,7 +110,7 @@ body{
   text-align: center;
   font-weight: bold;
 }
-.ligne{
+.lignesFlex{
   display:flex;
   flex-direction: row;
   justify-content: space-around;
@@ -118,10 +118,13 @@ body{
   text-align: center;
   font-weight: bold;
 }
-.lignes input {
+.lignesFlex input {
+  width: 60px;
+}
+.lignesGrid input {
   width: 40px;
 }
-.lignes p {
+.lignesGrid p {
   text-align: center;
 }
 footer{

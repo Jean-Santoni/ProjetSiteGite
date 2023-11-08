@@ -38,6 +38,7 @@ $(document).ready(function () {
     $.ajax({
       type: "POST",
       url: "GestionImages.php",
+      data: formData,
       contentType: false,
       processData: false,
       success: function (response) {
@@ -51,3 +52,4 @@ $(document).ready(function () {
     });
   });
 });
+

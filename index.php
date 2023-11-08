@@ -80,7 +80,7 @@
 <br>
 <div>
   <h1 class="textIndex"> Equipements et Services </h1>
-  <div class="ligne">
+  <div class="lignesFlex">
     <div class ="iconIndex">
     <img class ="iconIndex" src="./img/iconeChien_x50.png" alt="Icône" loading="lazy">
       <p> Animaux acceptés</p>
@@ -165,7 +165,7 @@
         <th>Hautes saison</th>
       </tr>
       <tr>
-        <td>Nuit</td>
+        <td>Nuitée</td>
         <td><?php
           $xml = new DOMDocument();
           $xml->load("./DonneesAffichees.xml");
@@ -239,7 +239,7 @@
   </div>
   </br>
   <h2 class="sousTitre"> Capacités </h2>
-  <div  class="lignes">
+  <div  class="lignesGrid">
     <div>
       <p>Personnes : </p>
       <p><?php
@@ -276,7 +276,7 @@
   </div>
   </br>
   <h2 class="sousTitre">Moyen de Paiement</h2>
-  <div class="ligne">
+  <div class="lignesFlex">
     <div class ="iconIndex">
       <img class ="iconIndex" src="./img/iconeCheque_x50.png" alt="Icône" loading="lazy">
       <p> Chèques</p>
