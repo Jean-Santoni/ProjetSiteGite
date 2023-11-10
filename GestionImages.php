@@ -48,14 +48,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
     exit;
   }
-  if ($_FILES["imageInput"]["error"] == 0) {
-    $uploadDir = "./img/Carousel/";
-    $imageUploadPath = $uploadDir . basename($_FILES["imageInput"]["name"]);
-    $imageTemp = $_FILES["imageInput"]["tmp_name"];
-    $compressedImage = compressImage($imageTemp, $imageUploadPath, 75);
-    echo "success";
-  } else {
-    echo "failed";
+  if(isset($_FILES["imageInput"])){
+    if ($_FILES["imageInput"]["error"] == 0) {
+      $uploadDir = "./img/Carousel/";
+      $imageUploadPath = $uploadDir . basename($_FILES["imageInput"]["name"]);
+      $imageTemp = $_FILES["imageInput"]["tmp_name"];
+      $compressedImage = compressImage($imageTemp, $imageUploadPath, 75);
+      echo "success";
+    } else {
+      echo "failed";
+    }
   }
   exit;
 }

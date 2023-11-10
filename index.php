@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="./js/affichageXML.js"></script>
 </head>
 
 <body>
@@ -50,28 +51,9 @@
 </div>
 
   <div class="textIndex">
-   <h1>Figuiès</h1>
-   <p>
-      <?php
-      $xml = new DOMDocument();
-      $xml->load("./DonneesAffichees.xml");
-     $elements = $xml->getElementsByTagName('DESCRIPTION');
-     foreach ($elements as $element) {
-        echo nl2br($element->nodeValue);
-      }
-      ?>
-   </p>
-
-  <p id="introText" class="introText">
-    <?php
-      $xml = new DOMDocument();
-     $xml->load("./DonneesAffichees.xml");
-     $elements = $xml->getElementsByTagName('DESCDETAIL');
-     foreach ($elements as $element) {
-       echo nl2br($element->nodeValue);
-     }
-      ?>
-    </p>
+    <h1>Figuiès</h1>
+    <p id='DESC'></p>
+    <p id="introText" class="introText"></p>
     <div class="indexButton" >
       <img id="affButtonIntroDown" class="iconArrow" src="./img/btnArrowDown_x50.png" alt="Icone" loading="lazy" onclick="toggleExpendIntro()">
     </div>
@@ -166,74 +148,25 @@
       </tr>
       <tr>
         <td>Nuitée</td>
-        <td><?php
-          $xml = new DOMDocument();
-          $xml->load("./DonneesAffichees.xml");
-          $elements = $xml->getElementsByTagName('PNM');
-          foreach ($elements as $element) {
-            echo nl2br($element->nodeValue);
-          }
-          ?> €</td>
-        <td><?php
-          $xml = new DOMDocument();
-          $xml->load("./DonneesAffichees.xml");
-          $elements = $xml->getElementsByTagName('PNH');
-          foreach ($elements as $element) {
-            echo nl2br($element->nodeValue);
-          }
-          ?> €</td>
+        <td id="nuitMSaison"></td>
+        <td id="nuitHSaison"></td>
       </tr>
       <tr>
         <td>Semaine</td>
-        <td><?php
-          $xml = new DOMDocument();
-          $xml->load("./DonneesAffichees.xml");
-          $elements = $xml->getElementsByTagName('PSM');
-          foreach ($elements as $element) {
-            echo nl2br($element->nodeValue);
-          }
-          ?> €</td>
-        <td><?php
-          $xml = new DOMDocument();
-          $xml->load("./DonneesAffichees.xml");
-          $elements = $xml->getElementsByTagName('PSH');
-          foreach ($elements as $element) {
-            echo nl2br($element->nodeValue);
-          }
-          ?> €</td>
+        <td id="semMSaison"></td>
+        <td id="semHSaison"></td>
       </tr>
       <tr>
         <td>Animaux</td>
-        <td colspan="2" class="center"><?php
-          $xml = new DOMDocument();
-          $xml->load("./DonneesAffichees.xml");
-          $elements = $xml->getElementsByTagName('PXA');
-          foreach ($elements as $element) {
-            echo nl2br($element->nodeValue);
-          }
-          ?> €</td>
+        <td colspan="2" class="center" id="prixAnimaux"></td>
       </tr>
       <tr>
         <td>Ménage</td>
-        <td colspan="2" class="center"><?php
-          $xml = new DOMDocument();
-          $xml->load("./DonneesAffichees.xml");
-          $elements = $xml->getElementsByTagName('PXM');
-          foreach ($elements as $element) {
-            echo nl2br($element->nodeValue);
-          }
-          ?> €</td>
+        <td colspan="2" class="center" id="prixMenage"></td>
       </tr>
       <tr>
         <td>Location de linge</td>
-        <td colspan="2" class="center"><?php
-          $xml = new DOMDocument();
-          $xml->load("./DonneesAffichees.xml");
-          $elements = $xml->getElementsByTagName('PXL');
-          foreach ($elements as $element) {
-            echo nl2br($element->nodeValue);
-          }
-          ?> €</td>
+        <td colspan="2" class="center" id="prixLinge"></td>
       </tr>
     </table>
   </div>
@@ -242,36 +175,15 @@
   <div  class="lignesGrid">
     <div>
       <p>Personnes : </p>
-      <p><?php
-        $xml = new DOMDocument();
-        $xml->load("./DonneesAffichees.xml");
-        $elements = $xml->getElementsByTagName('NBPERS');
-        foreach ($elements as $element) {
-          echo nl2br($element->nodeValue);
-        }
-        ?></p>
+      <p id="nbPers"></p>
     </div>
     <div>
       <p>Chambres : </p>
-      <p><?php
-        $xml = new DOMDocument();
-        $xml->load("./DonneesAffichees.xml");
-        $elements = $xml->getElementsByTagName('NBCHAMB');
-        foreach ($elements as $element) {
-          echo nl2br($element->nodeValue);
-        }
-        ?></p>
+      <p id="nbChambres"></p>
     </div>
     <div>
       <p>Personnes (Maximum) : </p>
-      <p><?php
-        $xml = new DOMDocument();
-        $xml->load("./DonneesAffichees.xml");
-        $elements = $xml->getElementsByTagName('NBPERSMAX');
-        foreach ($elements as $element) {
-          echo nl2br($element->nodeValue);
-        }
-        ?></p>
+      <p id="nbMaxPers"></p>
     </div>
   </div>
   </br>

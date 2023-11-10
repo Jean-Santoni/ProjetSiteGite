@@ -80,7 +80,7 @@ body{
   /*display: none;*/
 }
 .expended{
-  max-height: 100vh;
+  max-height: 50%;
 }
 .expended p {
   display: block;

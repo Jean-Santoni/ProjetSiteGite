@@ -3,7 +3,7 @@
 <?php
 include_once("./HTML/header.php");
 if (!isset($_SESSION['user'])) {
-  echo '<script>window.location="login.php"</script>';
+  echo '<script>window.location="Login.php"</script>';
   exit;
 }
 ?>
@@ -68,11 +68,11 @@ if (!isset($_SESSION['user'])) {
                 event.remove();
               }
               else{
-                paragraphe.innerHTML += "{ title: '"+ event.title+"', start: '" + event.startStr+"', display: '" + event.display+"', backgroundColor: '" + event.backgroundColor+"' }, " ;
+                paragraphe.innerHTML += "{ title: '"+ event.title+"', start: '" + event.startStr+"', end: '" + event.endStr+"', display: '" + event.display+"', backgroundColor: '" + event.backgroundColor+"' }, " ;
               }
             }
             else{
-              paragraphe.innerHTML += "{ title: '"+ event.title+"', start: '" + event.startStr+"', display: '" + event.display+"', backgroundColor: '" + event.backgroundColor+"' }, " ;
+              paragraphe.innerHTML += "{ title: '"+ event.title+"', start: '" + event.startStr+"', end: '" + event.endStr+"', display: '" + event.display+"', backgroundColor: '" + event.backgroundColor+"' }, " ;
             }
           });
           paragraphe.innerHTML = paragraphe.innerHTML.substring(0,paragraphe.innerHTML.length-2) + " ]";
@@ -150,165 +150,70 @@ if (!isset($_SESSION['user'])) {
 <form id="imageUploadForm" action="./PageAdmin.php" method="post" enctype="multipart/form-data">
   <label for="imageInput">Image Carousel :</label><br>
   <div class="ListImage" id="ListImage">
-    <?php
-    $directory = './img/Carousel';
-    $files = scandir($directory);
-
-    foreach ($files as $file) {
-      if ($file != '.' && $file != '..') {
-        echo "<div>$file <button type='button' class='delete-button' data-file='$file'>X</button></div>";
-      }
-    }
-    ?>
   </div>
   <input name="imageInput" type="file" accept="image/*" id="imageInput"><br><br>
-  <button id="uploadButton" type="button">Télécharger l'image</button>
+  <button id="uploadImage" type="button">Télécharger l'image</button>
+  <br><br>
 </form>
 <form action="./EnregistrementXML.php" method="post">
   <label for="description">Description :</label><br>
-  <textarea id="description" name="description" required><?php
-    $xml = new DOMDocument();
-    $xml->load("./DonneesAffichees.xml");
-    $elements = $xml->getElementsByTagName('DESCRIPTION');
-    foreach ($elements as $element) {
-      echo preg_replace('<br />', '', $element->nodeValue);
-    }
-    ?>
-  </textarea>
+  <textarea id="description" name="description" required></textarea>
   <br><br>
   <label for="descriptionDetail">Description détaillée :</label><br>
-  <textarea id="descriptionDetail" name="descDetail" required><?php
-    $xml = new DOMDocument();
-    $xml->load("./DonneesAffichees.xml");
-    $elements = $xml->getElementsByTagName('DESCDETAIL');
-    foreach ($elements as $element) {
-      echo $element->nodeValue;
-    }
-    ?>
-  </textarea>
+  <textarea id="descriptionDetail" name="descDetail" required></textarea>
   <br><br>
   <div class="lignesFlex">
   <div>
     <label for="prixNuitMoy">Prix nuitée moyenne saison :</label><br>
-    <input type="number" id="prixNuitMoy" name="prixNuitMoy"  value='<?php
-    $xml = new DOMDocument();
-    $xml->load("./DonneesAffichees.xml");
-    $elements = $xml->getElementsByTagName('PNM');
-    foreach ($elements as $element) {
-      echo $element->nodeValue;
-    }
-    ?>' required><br><br>
+    <input type="number" id="prixNuitMoy" name="prixNuitMoy" required><br><br>
   </div>
   <div>
     <label for="prixNuitHaut">Prix nuitée haute saison :</label><br>
-    <input type="number" id="prixNuitHaut" name="prixNuitHaut" value='<?php
-    $xml = new DOMDocument();
-    $xml->load("./DonneesAffichees.xml");
-    $elements = $xml->getElementsByTagName('PNH');
-    foreach ($elements as $element) {
-      echo $element->nodeValue;
-    }
-    ?>' required><br><br>
+    <input type="number" id="prixNuitHaut" name="prixNuitHaut" required><br><br>
   </div>
   <div>
     <label for="prixSemMoy">Prix semaine moyennes saison :</label><br>
-    <input type="number" id="prixSemMoy" name="prixSemMoy" value='<?php
-    $xml = new DOMDocument();
-    $xml->load("./DonneesAffichees.xml");
-    $elements = $xml->getElementsByTagName('PSM');
-    foreach ($elements as $element) {
-      echo $element->nodeValue;
-    }
-    ?>' required><br><br>
+    <input type="number" id="prixSemMoy" name="prixSemMoy" required><br><br>
   </div>
   <div>
     <label for="prixSemHaut">Prix semaine haute saison :</label><br>
-    <input type="number" id="prixSemHaut" name="prixSemHaut" value='<?php
-    $xml = new DOMDocument();
-    $xml->load("./DonneesAffichees.xml");
-    $elements = $xml->getElementsByTagName('PSH');
-    foreach ($elements as $element) {
-      echo $element->nodeValue;
-    }
-    ?>' required><br><br>
+    <input type="number" id="prixSemHaut" name="prixSemHaut" required><br><br>
   </div>
   </div>
   <br><br>
   <div class="lignesGrid">
   <div>
     <label for="prixAnimaux">Prix animaux :</label><br>
-    <input type="number" id="prixAnimaux" name="prixAnimaux" value='<?php
-    $xml = new DOMDocument();
-    $xml->load("./DonneesAffichees.xml");
-    $elements = $xml->getElementsByTagName('PXA');
-    foreach ($elements as $element) {
-      echo $element->nodeValue;
-    }
-    ?>' required><br><br>
+    <input type="number" id="prixAnimaux" name="prixAnimaux" required><br><br>
   </div>
   <div>
     <label for="prixMenage">Prix ménage :</label><br>
-    <input type="number" id="prixMenage" name="prixMenage" value='<?php
-    $xml = new DOMDocument();
-    $xml->load("./DonneesAffichees.xml");
-    $elements = $xml->getElementsByTagName('PXM');
-    foreach ($elements as $element) {
-      echo $element->nodeValue;
-    }
-    ?>' required><br><br>
+    <input type="number" id="prixMenage" name="prixMenage" required><br><br>
   </div>
   <div>
     <label for="prixLocation">Prix location de linge :</label><br>
-    <input type="number" id="prixLocation" name="prixLocation" value='<?php
-    $xml = new DOMDocument();
-    $xml->load("./DonneesAffichees.xml");
-    $elements = $xml->getElementsByTagName('PXL');
-    foreach ($elements as $element) {
-      echo $element->nodeValue;
-    }
-    ?>' required><br><br>
+    <input type="number" id="prixLocation" name="prixLocation" required><br><br>
   </div>
   </div>
   <br><br>
 <div class="lignesGrid">
   <div>
   <label for="nombrePersonne">Nombre de personnes :</label><br>
-  <input type="number" id="nombrePersonne" name="nombrePersonne" value='<?php
-  $xml = new DOMDocument();
-  $xml->load("./DonneesAffichees.xml");
-  $elements = $xml->getElementsByTagName('NBPERS');
-  foreach ($elements as $element) {
-    echo $element->nodeValue;
-  }
-  ?>' required><br><br>
+  <input type="number" id="nombrePersonne" name="nombrePersonne" required><br><br>
   </div>
   <div>
   <label for="nombreChambre">Nombre de chambre :</label><br>
-  <input type="number" id="nombreChambre" name="nombreChambre" value='<?php
-  $xml = new DOMDocument();
-  $xml->load("./DonneesAffichees.xml");
-  $elements = $xml->getElementsByTagName('NBCHAMB');
-  foreach ($elements as $element) {
-    echo $element->nodeValue;
-  }
-  ?>' required><br><br>
+  <input type="number" id="nombreChambre" name="nombreChambre" required><br><br>
   </div>
   <div>
   <label for="nombrePersonneMax">Nombre de personnes maximum :</label><br>
-  <input type="number" id="nombrePersonneMax" name="nombrePersonneMax" value='<?php
-  $xml = new DOMDocument();
-  $xml->load("./DonneesAffichees.xml");
-  $elements = $xml->getElementsByTagName('NBPERSMAX');
-  foreach ($elements as $element) {
-    echo $element->nodeValue;
-  }
-  ?>' required><br><br>
+  <input type="number" id="nombrePersonneMax" name="nombrePersonneMax" required><br><br>
   </div>
 </div>
   <br><br>
-  <input type="submit" value="Valider">
+  <input id="uploadText" type="button" value="Valider les textes">
+  <br><br>
 </form>
-<br>
 
 <form id="eventForm">
   <label for="startDate">Date de début :</label>
@@ -342,23 +247,13 @@ if (!isset($_SESSION['user'])) {
     </div>
   </div>
 
-
-
   <div id='calendar-container'>
     <div id='calendar'></div>
   </div>
-  <textarea id="EventsCalendar" name="EventsCalendar">
-        <?php
-        $xml = new DOMDocument();
-        $xml->load("./DonneesAffichees.xml");
-        $elements = $xml->getElementsByTagName('CALENDAR');
-        foreach ($elements as $element) {
-          echo $element->nodeValue;
-        }
-        ?>
-  </textarea>
-  <input type="submit" value="Valider">
+  <textarea id="EventsCalendar" name="EventsCalendar"></textarea>
+  <input type="button" id="uploadCalendar" value="Valider le calendrier">
 </form>
+<br><br>
 <?php
 include_once ("./HTML/footer.html");
 ?>
