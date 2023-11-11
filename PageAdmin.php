@@ -14,7 +14,6 @@ if (!isset($_SESSION['user'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/main.css">
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./js/pageAdminScript.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -110,18 +109,15 @@ if (!isset($_SESSION['user'])) {
         ?>
       });
 
-      $('#addEventButton').click(function() {
-        var startDate = $('#startDate').val();
-        var endDate = $('#endDate').val();
-        var eventStatus = $('#eventStatus').val();
+      document.getElementById('addEventButton').addEventListener('click', function() {
+        var startDate = document.getElementById('startDate').value;
+        var endDate = document.getElementById('endDate').value;
+        var eventStatus = document.getElementById('eventStatus').value;
 
-        let dateFin = new Date(endDate)
-        dateFin.setDate(dateFin.getDate() +1);
-
-        // Créez un nouvel événement pour le calendrier avec le titre basé sur le statut sélectionné
+        let dateFin = new Date(endDate);
+        dateFin.setDate(dateFin.getDate() + 1);
         var eventTitle = eventStatus === 'non-disponible' ? 'Non disponible' : 'Réservé';
 
-        // Créez un nouvel événement pour le calendrier
         var newEvent = {
           title: eventTitle,
           id: eventTitle,
@@ -130,15 +126,11 @@ if (!isset($_SESSION['user'])) {
           display: 'background',
           backgroundColor: colors[eventTitle]
         };
-
-        // Ajoutez l'événement au calendrier FullCalendar
         calendar.addEvent(newEvent);
 
-        // Réinitialisez les champs de saisie de date
-        $('#startDate').val('');
-        $('#endDate').val('');
+        document.getElementById('startDate').value = '';
+        document.getElementById('endDate').value = '';
       });
-
       calendar.render();
     });
   </script>
@@ -233,7 +225,7 @@ if (!isset($_SESSION['user'])) {
 <form action="./EnregistrementXML.php" method="post">
   <div id='external-events'>
     <p>
-      <strong>Draggable Events</strong>
+      <strong>Glissez les évènements</strong>
     </p>
 
     <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
